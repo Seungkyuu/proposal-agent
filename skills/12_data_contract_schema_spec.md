@@ -52,9 +52,22 @@
               "minItems": 3,
               "maxItems": 3
             }
-          }
+          },
+          "required": ["client_raw_color", "dominant_bg", "sub_text", "accent_color", "accent_rgb"]
+        },
+        "font_metadata": {
+          "type": "object",
+          "description": "Deck-wide 폰트 설정. 렌더러가 이 값으로 전체 슬라이드 폰트를 일괄 적용한다.",
+          "properties": {
+            "family": { "type": "string", "default": "나눔스퀘어 Neo" },
+            "size_top_message_pt": { "type": "integer", "default": 30 },
+            "size_subheader_pt": { "type": "integer", "default": 18 },
+            "size_body_pt": { "type": "integer", "default": 14 }
+          },
+          "required": ["family", "size_top_message_pt", "size_subheader_pt", "size_body_pt"]
         }
-      }
+      },
+      "required": ["theme_type", "color_palette", "font_metadata"]
     },
     "slides": {
       "type": "array",
@@ -62,6 +75,10 @@
         "type": "object",
         "properties": {
           "slide_number": { "type": "integer" },
+          "clone_source_layout_idx": {
+            "type": "integer",
+            "description": "Skill 03 역공학 모드에서 기존 PPTX 템플릿의 복제 소스 슬라이드 인덱스. 기본 모드에서는 0 사용."
+          },
           "layout_type": {
             "type": "string",
             "enum": [
@@ -109,6 +126,7 @@
               },
               "table_data": {
                 "type": "object",
+                "description": "CURRICULUM_TABLE 레이아웃의 경우 headers는 반드시 Skill 05 계약의 5열 고정값이어야 한다: [\"차시\", \"세부 주제\", \"핵심 학습 내용\", \"실습 도구 및 액티비티\", \"최종 산출물\"]",
                 "properties": {
                   "headers": { "type": "array", "items": { "type": "string" } },
                   "rows": {
@@ -116,6 +134,28 @@
                     "items": { "type": "array", "items": { "type": "string" } }
                   }
                 }
+              },
+              "benchmarking_metadata": {
+                "type": "object",
+                "description": "COMPARISON_BENCHMARK 레이아웃 전용. Skill 06의 AS 결과를 구조화하여 렌더러로 전달한다.",
+                "properties": {
+                  "alignment_score": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "description": "글로벌 벤치마크 대비 커리큘럼 일치율 (%)"
+                  },
+                  "benchmark_sources": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "비교 기준으로 사용된 출처 목록 (예: [\"MIT 6.S191\", \"Coursera AI for Everyone\"])"
+                  },
+                  "degraded_mode": {
+                    "type": "boolean",
+                    "description": "검색 실패로 내부 지식 기반 추정을 사용했는지 여부. true이면 슬라이드에 경고 문구 자동 삽입."
+                  }
+                },
+                "required": ["alignment_score", "benchmark_sources", "degraded_mode"]
               }
             }
           }

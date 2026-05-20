@@ -16,11 +16,13 @@
 │     ├── 02_client_color_system_spec.md ────────────► 브랜드 컬러 60-30-10 추출
 │     └── 03_design_deconstruction_reconstruction_rules.md ──► 회사 소개서 실적 매칭 (강사 배제)
 │     │
-│     └── [Phase 1 Integrity Pass Audit]
-│           - 고객사 테마 서칭 및 추진 동력/허들 분석 적용 검증
-│           - 강사진 프로필 소거율 100% 검증
-│           - 브랜드 강조색 가시성 및 배분율 통과
-│           - 피치 스타일(보고형/실전형) 타당성 검사
+│     └── [Phase 1 Integrity Pass Audit] — Skill 09 Section 3 기준
+│           - [CV] 고객사 웹 검색 완료 여부 (Fallback 적용 시 사유 명시)
+│           - [CV] 강사 배제 정규식 스캔 (Skill 01 Section 7 기준)
+│           - [CV] 브랜드 HEX 채도/명도 필터 통과
+│           - [CV] color_palette 3필드 완전 정의
+│           - [CV] 피치 스타일 ↔ 대상 직급 정합성
+│           - [RV: PENDING-RENDER] 60-30-10 실제 슬라이드 적용
 │
 ├── [PHASE 2] Curriculum & Instructional Design (2차 검토 마일스톤)
 │     ├── 04_instructional_design_engine_rules.md ──► 교수설계 최적 모델 매핑
@@ -28,20 +30,22 @@
 │     ├── 06_curriculum_validation_benchmarking_rules.md ──► 글로벌 syllabus 벤치마크 (AS ≥ 85%)
 │     └── 07_b2b_proposal_copywriting_rules.md ─────► 행동형 종결 카피라이팅 튜닝
 │     │
-│     └── [Phase 2 Integrity Pass Audit]
-│           - 교수설계 M_k 매핑 점수 최고점 산출 검증
-│           - 벤치마킹 일치율 (AS ≥ 85%) 보정 통과
-│           - 카피라이팅 명사형 종결 및 두괄식 헤드라인 검증
+│     └── [Phase 2 Integrity Pass Audit] — Skill 09 Section 3 기준
+│           - [CV] 교수설계 M_k 재연산 일치
+│           - [CV] 벤치마킹 AS ≥ 85% (검색 실패 시 Degraded 75%)
+│           - [CV] 금지 어휘 0건 정규식 스캔
+│           - [CV] CURRICULUM_TABLE 5열 헤더 정확히 일치
 │
 ├── [PHASE 3] USP & KPI Evaluation (3차 최종 검토 마일스톤)
 │     ├── 08_proposal_structure_and_operations_spec.md ──► 특장점 USP 3대 카드 도출
 │     └── 04_instructional_design_engine_rules.md ──► 커크패트릭 4단계 사후 케어 연동
 │     │
-│     └── [Phase 3 Integrity Pass Audit]
-│           - 어절 단위 세만틱 줄바꿈 (\n) 수동 삽입 완료
-│           - 나눔스퀘어 네오 일관성 (30/18/14) Deck-Wide 배분 검증
-│           - python-pptx 마스터 상속 & 네이티브 표 빌드 규격 통과
-│           - JSON 데이터 스키마 일치율 100% 검증
+│     └── [Phase 3 Integrity Pass Audit] — Skill 09 Section 3 기준
+│           - [CV] JSON 스키마 required 필드 완전성
+│           - [CV] layout_type enum 유효성 (9개 허용값)
+│           - [CV] top_message 세만틱 줄바꿈 삽입 (25자 초과 시 \n 필수)
+│           - [RV: PENDING-RENDER] PPTX 네이티브 표 렌더링
+│           - [RV: PENDING-RENDER] 폰트 위계 30/18/14pt 적용
 │
 └── [PHASE 4] Auto-Rendering Pipeline (자동 PPTX 생성)
       └── 12_data_contract_schema_spec.md ➔ renderer/pptx_builder.py ➔ 실물 제안서 생성

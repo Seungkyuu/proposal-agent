@@ -1,39 +1,62 @@
-# Agent Skill: Batch-Based 3-Phase Pipeline Orchestration & Integrity Pass Rules (V8)
+# Agent Skill: Batch-Based 3-Phase Pipeline Orchestration & Integrity Pass Rules (V9)
 
 ## 1. 개요 (Overview)
 본 사양은 B2B 제안서 기획 에이전트의 구동 시간을 최소화하고 기획자의 인지 피로를 차단하기 위해, 8단계를 **'3대 마일스톤 페이즈(3-Phase Milestone)'**로 통합 관리하며 각 페이즈 종료 시점마다 **'마스터 스킬 자가 검증(Integrity Pass Rules)'**을 가동하는 대화형 오케스트레이션 사양을 정의한다.
 
 ---
 
-## 2. 3대 페이즈별 자가 검증 항목 및 통과 기준 (Compliance Checklist)
+## 2. 검증 책임 분류 체계 (Audit Responsibility Classification)
 
-에이전트는 각 페이즈의 결과를 사용자에게 렌더링하기 전, 백그라운드에서 다음 자가 검증(Compliance Audit)을 실행하고 그 결과를 명시적 보고서로 함께 출력해야 한다.
+각 검증 항목은 실행 주체에 따라 두 유형으로 분류된다. 이 분류는 에이전트가 스스로 판정할 수 있는 항목과 렌더러 실행 후에야 판정 가능한 항목을 명확히 구분하여, 허위 PASS 판정을 방지한다.
 
-### Phase 1 자가 검증 (Discovery & Strategy Audit)
-* **검증 대상 스킬:** `01_proposal_strategy_discovery_rules.md`, `02_client_color_system_spec.md`, `03_design_deconstruction_reconstruction_rules.md`
-* **체크리스트:**
-  1. **[강사 배제 확인]:** 제안사 실적 레퍼런스 데이터 내에 강사 개인 이력이나 프로필 사진, 개인 정보가 구조적으로 100% 완벽하게 소거되었는가?
-  2. **[디자인 테마 및 60-30-10 규칙 검증]:** 추출된 고객사 고유 HEX 코드의 채도/명도를 필터링하고 슬라이드 배경(Neutral Off-White/Dark Navy 60%), 본문 텍스트 (30%), 강조 포인트 (10%) 비율이 조화롭게 매핑되었는가?
-  3. **[타겟-피치 스타일 얼라인먼트]:** 수강 타겟의 숙련도/직급에 따라 "이론 중심 든든한 보고형" 또는 "실무 즉시적용형" 피치 톤앤매너 분기가 타당하게 작동했는가?
+| 유형 | 기호 | 판정 주체 | 판정 시점 |
+|---|---|---|---|
+| **Claude-Verifiable** | `[CV]` | Claude API 에이전트 | JSON 생성 직후 텍스트/구조 분석으로 즉시 판정 |
+| **Renderer-Verified** | `[RV]` | python-pptx 렌더러 | PPTX 파일 생성 후 렌더러가 결과를 보고 |
 
-### Phase 2 자가 검증 (Curriculum & Design Audit)
-* **검증 대상 스킬:** `04_instructional_design_engine_rules.md`, `05_curriculum_generation_rules.md`, `06_curriculum_validation_benchmarking_rules.md`, `07_b2b_proposal_copywriting_rules.md`
-* **체크리스트:**
-  1. **[교수설계 모델 매핑 타당성 검증]:** 교육 목표 유형 O, 교육 기간 D, 평가 엄격도 A 변수에 의거한 매핑 점수 M_k 연산이 최적 모델을 정확히 선택했는가?
-  2. **[글로벌 벤치마킹 일치도 검증]:** 실시간 웹 검색을 통한 최신 선진 대학/에듀테크 실러버스와의 일치율 AS ≥ 85%를 만족하는가? 미달 시 스스로 Gap 보완 연산을 거쳐 보정했는가?
-  3. **[수주형 카피라이팅 & 명사형 종결 검사]:** 본문 설명 내에 단순 지식 전달성 어휘가 모두 제거되고 행동형 인지 어휘('도출', '구축', '자동화') 중심의 명사형 어미로 튜닝되었는가?
-
-### Phase 3 자가 검증 (USP & Formatting Audit)
-* **검증 대상 스킬:** `08_proposal_structure_and_operations_spec.md`, `12_data_contract_schema_spec.md`
-* **체크리스트:**
-  1. **[어절 단위 세만틱 줄바꿈 삽입]:** 텍스트 박스 경계를 예측하여 한글 조사나 고유 명사가 잘리지 않도록 의미 단위 줄바꿈 기호(`\n`)가 모든 어절 경계에 삽입되었는가?
-  2. **[나눔스퀘어 네오 폰트 일관성 검사]:** 상단 메시지 30pt, 소제목 헤드 18pt, 본문 14pt 위계가 완벽히 고수되었는가?
-  3. **[네이티브 표/플레이스홀더 바인딩 검사]:** python-pptx 빌더가 가짜 선 도형 대신 네이티브 표 오브젝트(`add_table`)와 마스터 레이아웃을 상속하여 코드를 짰는가?
-  4. **[JSON 계약 데이터 정합성 검증]:** 최종 패키징된 기획 JSON 구조가 `12_data_contract_schema_spec.md` 스키마 사양과 완전 무결하게 일치하는가?
+> **규칙:** `[RV]` 항목은 Phase 완료 보고서에서 `[PENDING-RENDER]`로 표기하며, Phase 4(PPTX 렌더링) 완료 후 최종 확정된다. Claude는 `[RV]` 항목을 스스로 `[PASS]`로 판정하지 않는다.
 
 ---
 
-## 3. 페이즈별 일괄 결과 및 자가 검증 보고서 출력 규격 (Integrity Pass Reports)
+## 3. 3대 페이즈별 자가 검증 항목 및 통과 기준 (Compliance Checklist)
+
+에이전트는 각 페이즈 결과를 사용자에게 출력하기 전, 백그라운드에서 아래 항목을 실행하고 결과를 보고서에 명시한다.
+
+### Phase 1 자가 검증 (Discovery & Strategy Audit)
+* **검증 대상 스킬:** `01`, `02`, `03`
+
+| # | 항목 | 유형 | 판정 방법 |
+|---|---|---|---|
+| 1 | **[강사 배제 확인]** 생성된 JSON 내 강사 관련 텍스트 소거 | `[CV]` | Skill 01 Section 7의 정규식 `(강사\|instructor\|담당강사\|수석\|MVP\|약력)` 스캔. 탐지 0건이면 PASS |
+| 2 | **[브랜드 컬러 유효성]** 추출된 HEX 코드가 채도/명도 필터를 통과했는가 | `[CV]` | HEX → HSL 변환 후 채도(S) ≥ 20%, 명도(L) 15~85% 범위 확인 |
+| 3 | **[60-30-10 팔레트 매핑]** JSON의 color_palette 3색이 역할별로 정의되었는가 | `[CV]` | `dominant_bg`, `sub_text`, `accent_color` 3필드 모두 비어있지 않으면 PASS |
+| 4 | **[피치 스타일 타당성]** 대상 직급과 pitch_style이 정합하는가 | `[CV]` | 대상이 "임원/C-Level"이면 `HEAVY_ACADEMIC`, 실무진이면 `LIGHT_AGILE` 매핑 확인 |
+| 5 | **[60-30-10 실제 슬라이드 적용]** | `[RV]` | 렌더러가 슬라이드 생성 후 배경/텍스트/강조색 면적 비율 검증 |
+
+### Phase 2 자가 검증 (Curriculum & Design Audit)
+* **검증 대상 스킬:** `04`, `05`, `06`, `07`
+
+| # | 항목 | 유형 | 판정 방법 |
+|---|---|---|---|
+| 1 | **[교수설계 모델 M_k 타당성]** 최고점 모델이 선택되었는가 | `[CV]` | O, D, A 변수로 M_k 공식 재연산 후 선택된 모델이 max(M_k)와 일치하면 PASS |
+| 2 | **[벤치마킹 AS ≥ 85%]** 글로벌 기준 일치율 충족 여부 | `[CV]` | Section 3의 AS 값 확인. 미달 시 Skill 06 Section 3-1 자동 실행 후 재확인 |
+| 3 | **[금지 어휘 0건]** 카피라이팅 필터 통과 | `[CV]` | 정규식 `(이해\|파악\|학습\|교육\|습득)` 스캔. 탐지 0건이면 PASS |
+| 4 | **[CURRICULUM_TABLE 5열 헤더 일치]** Skill 05 계약 헤더 준수 | `[CV]` | `headers` 배열이 `["차시", "세부 주제", "핵심 학습 내용", "실습 도구 및 액티비티", "최종 산출물"]`과 정확히 일치하면 PASS |
+
+### Phase 3 자가 검증 (USP & Formatting Audit)
+* **검증 대상 스킬:** `08`, `12`
+
+| # | 항목 | 유형 | 판정 방법 |
+|---|---|---|---|
+| 1 | **[JSON 스키마 일치율 100%]** 최종 JSON이 Skill 12 스키마를 준수하는가 | `[CV]` | `required` 필드(`slide_number`, `layout_type`, `top_message`, `content`) 전체 존재 확인. null 값 0건이면 PASS |
+| 2 | **[layout_type enum 유효성]** 9개 허용 값 외 사용 없는가 | `[CV]` | 모든 슬라이드의 `layout_type`이 허용 enum 목록 내에 있으면 PASS |
+| 3 | **[세만틱 줄바꿈 삽입]** `top_message` 25자 초과 시 `\n` 존재 | `[CV]` | `top_message` 길이 > 25자인 슬라이드에 `\n` 포함 여부 확인 |
+| 4 | **[PPTX 네이티브 표 렌더링]** `add_table` 사용 및 마스터 레이아웃 상속 | `[RV]` | 렌더러 빌드 완료 후 python-pptx의 shape type 검증 |
+| 5 | **[폰트 위계 30/18/14pt 적용]** | `[RV]` | 렌더러가 각 placeholder의 font_size 설정값 로그 출력으로 검증 |
+
+---
+
+## 4. 페이즈별 보고서 출력 규격 (Integrity Pass Reports)
 
 ### PHASE 1 완료 출력 포맷
 ```
@@ -43,16 +66,16 @@
 ■ [Step 1~3 기획 요약]
   - 고객사명: {고객사명} (Target: {대상}, {수준} 수준)
   - 과정명: {과정명}
-  
-  * [고객사 최신 행보 자동 리서치 결과]: {리서치 요약}
-  
-  - 브랜드 강조색: {색상명} ({HEX}) / 제안사 무기: {강점}
+  - 웹 리서치: {정상 완료 / Case 1~3 Fallback 적용}
+  * [고객사 최신 행보]: {리서치 요약 또는 "사용자 직접 입력"}
+  - 브랜드 강조색: {색상명} ({HEX}) / 피치 스타일: {HEAVY_ACADEMIC / LIGHT_AGILE}
 
-■ [마스터 스킬 자가 검증 리포트 (Integrity Pass Audit)]
-  - [PASS/FAIL] 교육 주제 연동형 고객사 웹 검색 및 인사이트 분석 적용
-  - [PASS/FAIL] 강사진 프로필/이력 사항 완벽 소거 검증
-  - [PASS/FAIL] 브랜드 컬러 60-30-10 디자인 배분율 셋팅 검증
-  - [PASS/FAIL] 타겟 역량에 따른 피치 스타일 분기 적용
+■ [Integrity Pass Audit]
+  - [CV: PASS/FAIL] 강사 배제 정규식 스캔 (탐지 {N}건)
+  - [CV: PASS/FAIL] 브랜드 HEX 채도/명도 필터 통과
+  - [CV: PASS/FAIL] color_palette 3필드 완전 정의
+  - [CV: PASS/FAIL] 피치 스타일 ↔ 대상 직급 정합성
+  - [RV: PENDING-RENDER] 60-30-10 실제 슬라이드 적용 (Phase 4 후 확정)
 ----------------------------------------------------------------------
 >> 위 기획 배경, 제안사 실적, 브랜드 컬러 매핑안이 적절합니까?
    (승인: Enter / 수정사항 피드백 입력 / 이전으로: 'back' 입력)
@@ -64,34 +87,45 @@
 [PHASE 2 완료] 교수설계 모델 및 제안 커리큘럼 상세안
 ======================================================================
 ■ [Step 4~5 기획 요약]
-  - 채택 모델: {교수설계 모델명}
-  - 커리큘럼: {커리큘럼 요약}
-  - 최종 도출 산출물: {산출물}
+  - 채택 모델: {모델명} (M_k = {점수})
+  - 커리큘럼: {일차별 요약}
+  - AS 검증: {AS값}% ({정상 / Degraded Mode — 사유 기재})
+  - 최종 산출물: {대표 Artifact}
 
-■ [마스터 스킬 자가 검증 리포트 (Integrity Pass Audit)]
-  - [PASS/FAIL] 교수설계 매핑 공식 적용 타당도 검증
-  - [PASS/FAIL] 글로벌 벤치마킹 일치도 검증 (AS = {점수}%)
-  - [PASS/FAIL] 카피라이팅 필터 적용 완료
+■ [Integrity Pass Audit]
+  - [CV: PASS/FAIL] 교수설계 M_k 재연산 일치
+  - [CV: PASS/FAIL] 벤치마킹 AS ≥ {85 or 75 (Degraded)}%
+  - [CV: PASS/FAIL] 금지 어휘 0건
+  - [CV: PASS/FAIL] CURRICULUM_TABLE 5열 헤더 일치
 ----------------------------------------------------------------------
->> 설계된 교육학적 흐름과 벤치마킹 완료된 커리큘럼이 만족스러우십니까?
+>> 설계된 커리큘럼이 만족스러우십니까?
    (승인: Enter / 수정사항 피드백 입력 / 이전으로: 'back' 입력)
 ```
 
 ### PHASE 3 완료 출력 포맷
 ```
 ======================================================================
-[PHASE 3 완료] 제안서 특장점 및 사후 가치 케어 상세안
+[PHASE 3 완료] 제안서 특장점 및 최종 JSON 패키지
 ======================================================================
 ■ [Step 6~7 기획 요약]
-  - 특장점(USP): {USP 요약}
-  - 사후 관리: {사후관리 계획}
+  - 특장점(USP): {USP 3대 카드 요약}
+  - 사후 관리: {커크패트릭 평가 + 사후 케어 계획}
 
-■ [마스터 스킬 자가 검증 리포트 (Integrity Pass Audit)]
-  - [PASS/FAIL] 한글 어절 단위 세만틱 줄바꿈 수동 삽입 검증
-  - [PASS/FAIL] 나눔스퀘어 네오 폰트 Deck-Wide 일관성 비율 고정 검증
-  - [PASS/FAIL] 파워포인트 네이티브 표/오브젝트 상속 렌더링 코드 규격
-  - [PASS/FAIL] 최종 JSON Schema 통신 규격 일치율 100% 검증
+■ [Integrity Pass Audit]
+  - [CV: PASS/FAIL] JSON 스키마 required 필드 완전성
+  - [CV: PASS/FAIL] layout_type enum 유효성
+  - [CV: PASS/FAIL] top_message 세만틱 줄바꿈 삽입
+  - [RV: PENDING-RENDER] PPTX 네이티브 표 렌더링 (Phase 4 후 확정)
+  - [RV: PENDING-RENDER] 폰트 위계 30/18/14pt 적용 (Phase 4 후 확정)
 ----------------------------------------------------------------------
->> 이 제안 구조 및 사후 관리 체계로 최종 실물 PPTX 렌더링을 승인하십니까?
+>> 이 제안 구조로 최종 실물 PPTX 렌더링을 승인하십니까?
    (최종 빌드 시작: Enter / 기획 수정: 피드백 입력 / 이전으로: 'back' 입력)
 ```
+
+---
+
+## 5. FAIL 처리 및 Self-Correction 루프
+
+* **`[CV: FAIL]` 감지 시:** 에이전트는 해당 페이즈 결과를 출력하지 않고, 위반 항목을 자가 수정(Self-Correction)한 후 해당 항목만 재검증. 3회 재시도 후에도 FAIL이면 사용자에게 수동 확인 요청.
+* **`[RV: PENDING-RENDER]` 항목:** PPTX 생성 완료 시 렌더러가 결과 로그를 출력하며, 에이전트는 이를 수신하여 최종 보고서를 업데이트.
+* **사용자 수정 피드백 수신 시:** `10_agent_coherence_propagation_rules.md`의 Dependency Map을 발동하여 연관 단계 전체를 재검증.
