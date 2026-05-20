@@ -1,7 +1,42 @@
-# Agent Skill: Education Proposal Planner & Intent Capture Rules (V3. Pre-Search Integrated)
+# Agent Skill: Education Proposal Planner & Intent Capture Rules (V4. Asset-First Integrated)
+
+## 0. [파이프라인 진입 전 필수] 제안사 자산 Pre-Flight Check
+
+> **이 섹션은 Section 2(고객사 리서치) 이전에 반드시 실행해야 한다.**
+> 에이전트가 고객사명과 교육 주제를 최초로 입력받으면, 웹 리서치를 시작하기 전에 아래 3가지를 먼저 확인한다. 이를 통해 제안사의 기존 브랜드 자산을 반영하지 않은 채 임의 디자인으로 제안서를 생성하는 오류를 방지한다.
+
+### Pre-Flight 3개 질문 (순서 고정)
+
+```
+에이전트 발화 예시:
+"[고객사명] 제안서 작업을 시작하기 전에 먼저 세 가지를 확인하겠습니다.
+
+①  알파코의 기존 PPTX 제안서 양식 파일이 있으신가요?
+    있다면 지금 업로드해 주세요. 그 양식을 그대로 살리면서 내용만 채워드립니다.
+
+②  알파코 브랜드 컬러 가이드(로고 색상 등)가 별도로 있으신가요?
+
+③  참고하고 싶은 이전 제안서(레퍼런스 덱)가 있으신가요?
+    있다면 함께 업로드해 주시면 스토리 구조를 분석해서 이식합니다.
+
+없으신 항목은 '없음'이라고 답해 주시면 바로 리서치를 시작하겠습니다."
+```
+
+### Pre-Flight 분기 처리
+
+| 답변 | 에이전트 처리 |
+|---|---|
+| PPTX 양식 파일 업로드됨 | Skill 03 역공학 모드 강제 활성화. `clone_source_layout_idx` 채번 시작. 이 파일에서 레이아웃·컬러·폰트 DNA 추출 후 Section 2 리서치로 진입 |
+| 브랜드 컬러 가이드 있음 | 추출된 제안사 브랜드 컬러를 Skill 02의 `dominant_bg` 또는 `accent_color` 기준으로 우선 반영. 고객사 CI는 보조 팔레트로 처리 |
+| 레퍼런스 덱 업로드됨 | Skill 03 §2 LAYER 2 스토리라인 DNA 분석 추가 실행 후 Section 2로 진입 |
+| 전부 없음 | 기본 디자인 시스템(Skill 12 default) + 고객사 CI 기반 60-30-10 팔레트로 진행 |
+
+> **에러 방지 규칙:** 사용자가 아무런 파일도 제공하지 않았는데 에이전트가 임의 디자인으로 슬라이드를 생성한 경우, 이는 Pre-Flight Check 미실행으로 인한 파이프라인 위반이다. Skill 09 Phase 0 Audit에서 `[FAIL]` 처리하고 사용자에게 다시 확인한다.
+
+---
 
 ## 1. 개요 (Overview)
-본 사양은 에이전트가 파이프라인 시작 시([STATE: DISCOVERY]), 사용자가 입력한 고객사명과 교육 주제를 바탕으로 '교육 주제 맞춤형 고객사 사전 리서치(Topic-Centric Pre-Search)'를 자동으로 실행하고, 이를 기반으로 고도로 구조화된 '교육제안 기획서(Proposal Planner)' 및 자가 진단 리포트를 수립하는 규칙을 정의한다.
+본 사양은 에이전트가 파이프라인 시작 시([STATE: DISCOVERY]), Section 0 Pre-Flight Check 완료 후 사용자가 입력한 고객사명과 교육 주제를 바탕으로 '교육 주제 맞춤형 고객사 사전 리서치(Topic-Centric Pre-Search)'를 자동으로 실행하고, 이를 기반으로 고도로 구조화된 '교육제안 기획서(Proposal Planner)' 및 자가 진단 리포트를 수립하는 규칙을 정의한다.
 
 ---
 

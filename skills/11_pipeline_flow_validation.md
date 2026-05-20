@@ -1,15 +1,28 @@
-# B2B Proposal Agent: Pipeline Flow & Validation Architecture (V5)
+# B2B Proposal Agent: Pipeline Flow & Validation Architecture (V6)
 
-본 문서는 B2B 제안서 기획 챗봇 에이전트의 3대 배치 페이즈(Batch Phase) 구동 시 적용되는 마스터 스킬 작동 흐름 및 페이즈 경계선에서의 자가 검증 리포팅(Integrity Pass Report) 구조를 정의한다.
+본 문서는 B2B 제안서 기획 챗봇 에이전트의 4대 배치 페이즈(Batch Phase) 구동 시 적용되는 마스터 스킬 작동 흐름 및 페이즈 경계선에서의 자가 검증 리포팅(Integrity Pass Report) 구조를 정의한다.
 
 ---
 
-## 1. 3대 페이즈별 실시간 스킬 바인딩 & 검증 매핑 (Flow Map)
+## 1. 페이즈별 (Phase 0~4) 실시간 스킬 바인딩 & 검증 매핑 (Flow Map)
 
 에이전트는 독립된 스킬들을 무대 뒤에서 동시에 구동하여 연산 지연을 단축하며, 페이즈 종료와 동시에 엄격한 정합성 보고서(Audit)를 발행한다.
 
 ```
 [인풋 수신: 기업명 & 거친 요구사항]
+│
+├── [PHASE 0] 제안사 자산 인벤토리 체크 ★ Phase 1 이전 필수 실행
+│     ├── 01_proposal_strategy_discovery_rules.md §0 ──► Pre-Flight Q1: 기존 PPTX 양식 파일 여부 확인
+│     ├── 01_proposal_strategy_discovery_rules.md §0 ──► Pre-Flight Q2: 브랜드 컬러 가이드 여부 확인
+│     └── 01_proposal_strategy_discovery_rules.md §0 ──► Pre-Flight Q3: 레퍼런스 덱 여부 확인
+│     │
+│     └── [Phase 0 Integrity Pass Audit] — Skill 09 Section 1-1 기준
+│           - [CV] Q1 PPTX 양식 확인 질문 실행 여부 (미실행 시 FAIL → 파이프라인 중단)
+│           - [CV] Q2 브랜드 컬러 가이드 확인 질문 실행 여부
+│           - [CV] Q3 레퍼런스 덱 확인 질문 실행 여부
+│           - [CV] 파일 업로드 수신 시 → Skill 03 역공학 모드 활성화 및 clone_source_layout_idx 채번 여부
+│
+│     ※ Phase 0 Audit 전원 [PASS] 확인 후에만 Phase 1 진입 허용
 │
 ├── [PHASE 1] Discovery & Strategy Alignment (1차 검토 마일스톤)
 │     ├── 01_proposal_strategy_discovery_rules.md ──► 주제 연동형 고객사 자동 사전 리서치 & 교육제안 기획서 수립
@@ -53,7 +66,7 @@
 
 ---
 
-## 2. 3대 페이즈 정합성 보고서 자가 진단 및 예외 조치 프로토콜 (Exception Handling)
+## 2. 전 페이즈 정합성 보고서 자가 진단 및 예외 조치 프로토콜 (Exception Handling)
 
 * **진단 결과 `[FAIL]` 감지 시:**
   에이전트는 해당 페이즈 결과를 기획자에게 절대 출력하지 않으며, 감지된 위반 내역(예: "레퍼런스에 강사 개인 이력이 검출됨")을 분석하여 스스로 기획 내용을 재수정(Self-Correction Loop)한 후 정합성 보고서가 전원 `[PASS]`될 때까지 루프를 가동한다.
