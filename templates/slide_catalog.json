@@ -1,8 +1,8 @@
 {
   "generated_at": "2026-05-20",
   "source_dir": "templates/source_decks",
-  "total_source_files": 12,
-  "total_source_slides": 361,
+  "total_source_files": 13,
+  "total_source_slides": 410,
   "note": "추천 슬라이드는 텍스트 분석 기반 1차 추천입니다. PowerPoint에서 시각 확인 후 alternatives 중 교체 가능합니다.",
   "layouts": {
     "TITLE_SLIDE": {
@@ -15,6 +15,13 @@
       },
       "alternatives": [
         {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 1,
+          "text_preview": "Vibe Coding 을 활용한 업무자동화 교육 제안 2026. 04. 24. Fri. 제안서",
+          "flags": "IMG, MULTI-SHAPE(5)",
+          "note": "표지 — IMG+SHAPE(5), 최신 디자인 (2026년)"
+        },
+        {
           "file": "(알파코) KB국민은행 메타인지 AI 해커톤 제안.pptx",
           "slide_idx": 1,
           "text_preview": "미래를 디자인하는 메타인지 AI 해커톤 Collaborate with AI 알파코 &amp; MS 협력업체 &amp; 서울대학교 빅데이터 혁신융합대학 사업단 주관",
@@ -25,12 +32,6 @@
           "slide_idx": 1,
           "text_preview": "AX 혁신 리더 AI Agent 교육 제안 2025. 12. 12. Fri. 제안서",
           "flags": "IMG, MULTI-SHAPE(5)"
-        },
-        {
-          "file": "(알파코)KB국민은행 디지털분야 위탁교육 제안서(251128).pptx",
-          "slide_idx": 1,
-          "text_preview": "고용노동부 인증기관 2026 디지털 분야 위탁교육 제안",
-          "flags": "IMG, MULTI-SHAPE(7)"
         }
       ]
     },
@@ -73,22 +74,24 @@
       },
       "alternatives": [
         {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 14,
+          "text_preview": "Learning Path 상세 커리큘럼 예상 산출물 Ⅲ. 상세 커리큘럼 Vibe Coding 기반 업무자동화 교육",
+          "flags": "IMG, MULTI-SHAPE(5)",
+          "note": "챕터 간지 — IMG+SHAPE(5), 깔끔한 섹션 구분"
+        },
+        {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 10,
+          "text_preview": "제안 배경 KSF 기대 효과 Ⅱ. 과정 개요 Vibe Coding 기반 업무자동화 교육",
+          "flags": "IMG, MULTI-SHAPE(5)",
+          "note": "과정 개요 간지 — IMG+SHAPE(5)"
+        },
+        {
           "file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
           "slide_idx": 1,
           "text_preview": "AX 혁신 리더 AI Agent 교육 제안 2025. 12. 12. Fri. 제안서",
           "flags": "IMG, MULTI-SHAPE(5)"
-        },
-        {
-          "file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
-          "slide_idx": 1,
-          "text_preview": "AIDP(AI-based Data &amp; Planning, 디지털금융실무 전문가 과정 ) 제안 2025/07/28",
-          "flags": "IMG"
-        },
-        {
-          "file": "(알파코)KB국민은행 디지털분야 위탁교육 제안서(251128).pptx",
-          "slide_idx": 1,
-          "text_preview": "고용노동부 인증기관 2026 디지털 분야 위탁교육 제안",
-          "flags": "IMG, MULTI-SHAPE(7)"
         }
       ]
     },
@@ -102,6 +105,13 @@
       },
       "alternatives": [
         {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 7,
+          "text_preview": "3 . DX·AI 변화관리 파트너 , 알파코 DX 전환 내재화 수준별 수행 레퍼런스는 다음과 같습니다 . (※ Level 1 디지털 마인드셋 및 Skill 이해 , Level2 디지털 Skill 실무적용 능력 함양 , Level3 이상 DX 전문 인력 양성 ) 학습수준",
+          "flags": "TABLE",
+          "note": "수행실적 레퍼런스 테이블 — TABLE, 레벨별 구분 명확"
+        },
+        {
           "file": "(알파코) KB국민은행 메타인지 AI 해커톤 제안.pptx",
           "slide_idx": 5,
           "text_preview": "새로운 미래형 인재의 필요역량 미래 핵심역량 메타인지(Meta-Cognition)",
@@ -112,12 +122,6 @@
           "slide_idx": 5,
           "text_preview": "2. 커리큘럼 ④ 금융 실무 적용 및 종합 프로젝트 (24 시간 ) 학습모듈 교과목 교육내용 시간 금융 실무 적용 및 종합 프로젝트 금융 데이터 기반 분석 기획 실습 이상거래탐지 , 고객 세분화 , 자금세탁방지 등 실무 사례를 활용한 분석 기획 실습 4 AutoML 및",
           "flags": "TABLE"
-        },
-        {
-          "file": "(알파코)KB국민은행 디지털분야 위탁교육 제안서(251128).pptx",
-          "slide_idx": 5,
-          "text_preview": "3. 학습 개요 과정별 학습 로드맵 및 난이도 구분은 아래와 같습니다 . 데이터분석 / 시각화 업무 자동화 (RPA) 서비스 기획 IT 개발 생성형 AI X VBA 자동화 파이썬 데이터분석 / 시각화 생성형 AI X 보고서 작성 생성형 AI 활용 인터페이스 설계 / 테",
-          "flags": "TABLE, MULTI-SHAPE(48)"
         }
       ]
     },
@@ -160,22 +164,24 @@
       },
       "alternatives": [
         {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 15,
+          "text_preview": "１ . Learning Path 실무에 바로 적용 가능한 AI 활용 역량을 단계적으로 키워 , 현대제철 사내 업무 자동화를 완성하는 교육 로드맵입니다 . ※ KHP 제도 활용 교육 Step 1. 사전 기획 AI 업무 설계 AI 업무 계획서 개념 이해 업무 문제 발굴 A",
+          "flags": "MULTI-SHAPE(31)",
+          "note": "Learning Path 5단계 — SHAPE(31), 단계별 로드맵 구조"
+        },
+        {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 6,
+          "text_preview": "[3 단계 ] 전파 [2 단계 ] 적용 [1 단계 ] 이해 ~ 2022 2023 2024 2025 ~ AX DX 전환 3 . DX·AI 변화관리 파트너 , 알파코 각 분야별 전문가들로 구성된 조직력을 통해 기업의 성장에 필요한 All in One 교육 서비스를 제공합니",
+          "flags": "IMG, MULTI-SHAPE(12)",
+          "note": "DX→AX 3단계 전환 — IMG+SHAPE(12), 시각적 흐름 명확"
+        },
+        {
           "file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
           "slide_idx": 1,
           "text_preview": "AX 혁신 리더 AI Agent 교육 제안 2025. 12. 12. Fri. 제안서",
           "flags": "IMG, MULTI-SHAPE(5)"
-        },
-        {
-          "file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
-          "slide_idx": 1,
-          "text_preview": "AIDP(AI-based Data &amp; Planning, 디지털금융실무 전문가 과정 ) 제안 2025/07/28",
-          "flags": "IMG"
-        },
-        {
-          "file": "(알파코)KB국민은행 디지털분야 위탁교육 제안서(251128).pptx",
-          "slide_idx": 1,
-          "text_preview": "고용노동부 인증기관 2026 디지털 분야 위탁교육 제안",
-          "flags": "IMG, MULTI-SHAPE(7)"
         }
       ]
     },
@@ -218,22 +224,24 @@
       },
       "alternatives": [
         {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 19,
+          "text_preview": "２ . 상세 커리큘럼 – 기초 과정 비개발자도 16 시간 안에 바이브코딩으로 개인 업무 자동화 앱을 완성하는 과정입니다 . 바이브코딩 기초 교육 직무별 실무 기반 예제 PRD 작성 방법 및 내용 추가 PoC 검증 내용 # 바이브 코딩 학습 # 학습 및 기획 #16 시간",
+          "flags": "TABLE, MULTI-SHAPE(15)",
+          "note": "기초과정 상세 커리큘럼 — TABLE+SHAPE(15), 5열 구조 풍부"
+        },
+        {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 20,
+          "text_preview": "２ . 상세 커리큘럼 – 심화 과정 # 앱고도화 # 현업 배포 #16 시간 # KHP-B 권 핵심 산출물 직무별 사내 망에서 작동하는 개인별 자동화 도구 (AI Agent) No 구분 상세 내용 시간 1 앱 현황 리뷰 &amp; 고도화 방향 설정 개인별 Streamli",
+          "flags": "TABLE, MULTI-SHAPE(14)",
+          "note": "심화과정 상세 커리큘럼 — TABLE+SHAPE(14), 산출물 명시"
+        },
+        {
           "file": "(알파코) KB국민은행 메타인지 AI 해커톤 제안.pptx",
           "slide_idx": 4,
           "text_preview": "교육 페러다임의 변화가 가져올 미래업무의 변화 인공지능과의 협업",
           "flags": "IMG, MULTI-SHAPE(5)"
-        },
-        {
-          "file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
-          "slide_idx": 4,
-          "text_preview": "1.1 제안배경 및 목적 1.1.1 AI Agent 도입 확산에 따른 실무형 인재 확보 필요성 자산 관리 , 보험 설계 등 AI 에이전트 전방위 확장  'AI 투자메이트 ', 내부업무 플랫폼 'AI ONE', 고객 응대용 'AI 은행원 ’ 등 적용 기업 여신 영역 전",
-          "flags": "IMG, MULTI-SHAPE(23)"
-        },
-        {
-          "file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
-          "slide_idx": 4,
-          "text_preview": "2. 커리큘럼 ③ AI 도구 기반 서비스 기획 (16 시간 ) 학습모듈 교과목 시간 AI 도구 기반 서비스 기획 사용자 문제 정의 4 데이터를 중심으로 한 서비스 방향 설계 3 서비스 구조 설계 4 프로토타입 제작 및 테스트 4 서비스 시장성 검토 1 금융 실무 적용 ",
-          "flags": "TABLE"
         }
       ]
     },
@@ -305,6 +313,13 @@
       },
       "alternatives": [
         {
+          "file": "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx",
+          "slide_idx": 49,
+          "text_preview": "문의 ㅣ 알파 코 전략영업팀 허선희 책임 : shheo @alpaco.co.kr/ 02-2163-5750 이승규 선임 : smvo0530@alpaco.co.kr/ 02-2163-5704 www.alpaco.co.kr Thank you End of Document AI와",
+          "flags": "IMG, MULTI-SHAPE(7)",
+          "note": "연락처(이메일+전화) 포함 엔딩 — IMG+SHAPE(7)"
+        },
+        {
           "file": "(알파코) KB국민은행 메타인지 AI 해커톤 제안.pptx",
           "slide_idx": 24,
           "text_preview": "미래를 디자인하는 메타인지 AI 해커톤 Collaborate with AI",
@@ -315,12 +330,6 @@
           "slide_idx": 93,
           "text_preview": "THANK YOU 고용노동부 인증기관",
           "flags": "IMG"
-        },
-        {
-          "file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
-          "slide_idx": 20,
-          "text_preview": "THANK YOU 20",
-          "flags": "BASIC"
         }
       ]
     }
@@ -1645,6 +1654,253 @@
         "slide_idx": 30,
         "flags": "IMG",
         "text_preview": "문의 ㅣ 알파코 기업성장 · 혁신실 이미영 실장 : mylee @alpaco.co.kr/ 010 8507 0915 www.alpaco.co.kr Thank you End of Document"
+      }
+    ],
+    "★2026 현대제철 Vibe Coding 교육 제안서(260424).pptx": [
+      {
+        "slide_idx": 1,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "Vibe Coding 을 활용한 업무자동화 교육 제안 2026. 04. 24. Fri. 제안서"
+      },
+      {
+        "slide_idx": 2,
+        "flags": "IMG, MULTI-SHAPE(6)",
+        "text_preview": "제안업체 일반 과정 개요 상세 커리큘럼 기대 효과 &amp; 산출물 운영 방안 견적 CONTENTS Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 3,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "일반현황 및 주요 연혁 주요사업 분야 및 조직구성 D·AX 변화관리 파트너 , 알파코 - 유사 교육 레퍼런스 Ⅰ. 제안업체 일반 Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 4,
+        "flags": "TABLE, MULTI-SHAPE(23)",
+        "text_preview": "1. 일반현황 및 주요 연혁 회사명 ㈜알파코 사업 분야 교육 서비스 회사 설립일자 1999 년 9 월 ( 법인전환 2006 년 1 월 ) 대표자 이윤성 인적구성 63 명 주소 사무실 : 서울특별시 성동구 성수일로 8 길 59 평화빌딩 B 동 6 층 성수 1 캠퍼스 : "
+      },
+      {
+        "slide_idx": 5,
+        "flags": "TABLE, MULTI-SHAPE(51)",
+        "text_preview": "2. 주요사업 분야 및 조직구성 기업 DX 교육 매년 300 개사 , 수강생 25 만명 대상 온 · 오프라인 교육서비스 제공 DX 트렌드에 맞춘 체계화된 교육 로드맵을 통한 교육 제공 기업의 디지털 업무 전환을 위한 프로세스 컨설팅 및 구축 비전공자 및 경력자 모두를 "
+      },
+      {
+        "slide_idx": 6,
+        "flags": "IMG, MULTI-SHAPE(12)",
+        "text_preview": "[3 단계 ] 전파 [2 단계 ] 적용 [1 단계 ] 이해 ~ 2022 2023 2024 2025 ~ AX DX 전환 3 . DX·AI 변화관리 파트너 , 알파코 각 분야별 전문가들로 구성된 조직력을 통해 기업의 성장에 필요한 All in One 교육 서비스를 제공합니"
+      },
+      {
+        "slide_idx": 7,
+        "flags": "TABLE",
+        "text_preview": "3 . DX·AI 변화관리 파트너 , 알파코 DX 전환 내재화 수준별 수행 레퍼런스는 다음과 같습니다 . (※ Level 1 디지털 마인드셋 및 Skill 이해 , Level2 디지털 Skill 실무적용 능력 함양 , Level3 이상 DX 전문 인력 양성 ) 학습수준"
+      },
+      {
+        "slide_idx": 8,
+        "flags": "IMG, MULTI-SHAPE(23)",
+        "text_preview": "3 . DX·AI 변화관리 파트너 , 알파코 다양한 고객사의 Data&amp;AI 기반의 변화를 성공적으로 정착할 수 있도록 지원하며 검증된 성과를 보유하고 있습니다 . 교육 프로그램명 교육 인사이트 교육 지향점 비개발자도 활용 가능한 실무 자동화 설계 역량과 반복적인"
+      },
+      {
+        "slide_idx": 9,
+        "flags": "IMG, MULTI-SHAPE(9)",
+        "text_preview": "3 . DX·AI 변화관리 파트너 , 알파코 다양한 고객사의 Data&amp;AI 기반의 변화를 성공적으로 정착할 수 있도록 지원하며 검증된 성과를 보유하고 있습니다 . 교육명 : 전사 AI 리터러시 교육 ( 교육중 ) 기간 : 2026. 03 ~ 2026. 07 교육"
+      },
+      {
+        "slide_idx": 10,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "제안 배경 KSF 기대 효과 Ⅱ. 과정 개요 Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 11,
+        "flags": "MULTI-SHAPE(26)",
+        "text_preview": "1. 제안 배경 DX 축적 4 년 , 이제 ' 만드는 단계 ' 로 해외법인 리포트 자동화 실현 업무시간 90% 단축 실증 AI· 빅데이터 페스티벌 4 년 연속 개최 4 년간 쌓은 DX 역량 , 핵심 ' 결과물 ’ 이 필요한 때 이보룡 신임 대표의 VISION 2032 "
+      },
+      {
+        "slide_idx": 12,
+        "flags": "MULTI-SHAPE(16)",
+        "text_preview": "2. KSF 알파코는 단순한 학습을 넘어 , 현대제철의 실질적인 업무 자동화와 전사적 AX 확산을 실현하는 성과 직결형 교육을 제안합니다 . KSF Key Success Factors 1 현업 성과 직결형 교육 설계 : 교육을 결과로 증명 반복 업무 자동화 과제를 기반"
+      },
+      {
+        "slide_idx": 13,
+        "flags": "IMG, MULTI-SHAPE(20)",
+        "text_preview": "3. 기대 효과 사내 업무 문제 해결 직무별 반복 업무 자동화 도구 직접 구현 코딩 경험 없이 PRD 기반 결과물 완성 영업 · 구매 · 재경 · 경영지원 직무 맞춤 적용 업무 처리 속도 향상 반복 수작업 자동화로 업무 처리 시간 단축 데이터 수집 · 정리 · 보고 프"
+      },
+      {
+        "slide_idx": 14,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "Learning Path 상세 커리큘럼 예상 산출물 Ⅲ. 상세 커리큘럼 Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 15,
+        "flags": "MULTI-SHAPE(31)",
+        "text_preview": "１ . Learning Path 실무에 바로 적용 가능한 AI 활용 역량을 단계적으로 키워 , 현대제철 사내 업무 자동화를 완성하는 교육 로드맵입니다 . ※ KHP 제도 활용 교육 Step 1. 사전 기획 AI 업무 설계 AI 업무 계획서 개념 이해 업무 문제 발굴 A"
+      },
+      {
+        "slide_idx": 16,
+        "flags": "TABLE, MULTI-SHAPE(5)",
+        "text_preview": "１ . Learning Path 실무에 바로 적용 가능한 AI 활용 역량을 단계적으로 키워 , 현대제철 사내 업무 자동화를 완성하는 교육 로드맵입니다 . Step 5. 고도화 구분 Step 1. 사전 기획 Step 2. 기본 과정 Step 3. 심화 과정 Step 4."
+      },
+      {
+        "slide_idx": 17,
+        "flags": "IMG, MULTI-SHAPE(8)",
+        "text_preview": "[ 참고 ] KHP 제도 소개 KHP 사업이란 ? 국비 AI – DX 실무 인재 전환 프로그램 K- 하이테크플랫폼은 고용노동부와 한국산업인력공단이 운영하는 국가 양성 사업으로 기업이 AI – 데이터 디지털 전환 역량을 확보 할 수 있도록 정부가 훈련비를 지원하는 실무 "
+      },
+      {
+        "slide_idx": 18,
+        "flags": "TABLE, MULTI-SHAPE(28)",
+        "text_preview": "[ 참고 ] KHP 과정 진행 프로세스 구분 과정명 시간 과정 1 생성형 AI 활용한 마케팅 실무 전략 ( 기본 ) 8H 과정 2 생성형 AI 활용한 마케팅 실무 전략 ( 심화 ) 8H 과정 3 생성형 AI 기반 업무 효율화 및 실무 활용 8H 과정 4 생성형 AI 기"
+      },
+      {
+        "slide_idx": 19,
+        "flags": "TABLE, MULTI-SHAPE(15)",
+        "text_preview": "２ . 상세 커리큘럼 – 기초 과정 비개발자도 16 시간 안에 바이브코딩으로 개인 업무 자동화 앱을 완성하는 과정입니다 . 바이브코딩 기초 교육 직무별 실무 기반 예제 PRD 작성 방법 및 내용 추가 PoC 검증 내용 # 바이브 코딩 학습 # 학습 및 기획 #16 시간"
+      },
+      {
+        "slide_idx": 20,
+        "flags": "TABLE, MULTI-SHAPE(14)",
+        "text_preview": "２ . 상세 커리큘럼 – 심화 과정 # 앱고도화 # 현업 배포 #16 시간 # KHP-B 권 핵심 산출물 직무별 사내 망에서 작동하는 개인별 자동화 도구 (AI Agent) No 구분 상세 내용 시간 1 앱 현황 리뷰 &amp; 고도화 방향 설정 개인별 Streamli"
+      },
+      {
+        "slide_idx": 21,
+        "flags": "IMG, MULTI-SHAPE(25)",
+        "text_preview": "[ 참고 ] 산출물 예시 직무별 자동화 도구 예시 ※ 본 내용 은 커리큘럼을 기반으로 한 샘플입니 다 . 바이브 코딩 과정 기본 과정과 심화 과정 산출물 예시는 아래와 같습니다 . 심화 과정 기본 과정 PRD ( 예시 ) AI 업무 자동화 기획서 (PRD) 업무 Pai"
+      },
+      {
+        "slide_idx": 22,
+        "flags": "TABLE, IMG, MULTI-SHAPE(15)",
+        "text_preview": "２ . 상세 커리큘럼 – 사후 워크숍 현업에서 막혔던 병목을 직접 해결하고 , 앱을 고도화하여 실제 업무에 바로 적용하는 사후 워크숍입니다 . # 결과물 고도화 # 1:1 멘토링 # 추가교육 도출 핵심 산출물 개인 업무 자동화도구 ( 교육 산출물 ) 고도화 및 우수 사"
+      },
+      {
+        "slide_idx": 23,
+        "flags": "TABLE, IMG, MULTI-SHAPE(15)",
+        "text_preview": "#AI 도구활용실습 # 직무시나리오 #8 시간 # KHP-B 권 핵심 산출물 개인별 직무 맞춤형 AI 활용 시나리오 및 업무 결과물 초안 No 구분 상세 내용 시간 1 생성형 AI 이해 생성형 AI 및 LLM 개념과 작동 원리 , 기업 및 산업 활용 사례 이해 1H 2"
+      },
+      {
+        "slide_idx": 24,
+        "flags": "TABLE, MULTI-SHAPE(8)",
+        "text_preview": "２ . 상세 커리큘럼 ( 보충 과정 – 온라인교육 ) 생성형 AI 를 활용하여 보고서 작성 , 자료 정리 , 기획 등 다양한 업무의 생산성과 효율성을 향상시키는 것을 목표로 합니다 . 프로그램명 AI 리터러시 과정 교육 종류 온라인 (GenAI in action) 참여"
+      },
+      {
+        "slide_idx": 25,
+        "flags": "IMG, MULTI-SHAPE(24)",
+        "text_preview": "２ . 상세 커리큘럼 ( 보충 과정 – 온라인교육 ) 생성형 AI 를 활용하여 보고서 작성 , 자료 정리 , 기획 등 다양한 업무의 생산성과 효율성을 향상시키는 것을 목표로 합니다 . 효과 AI 윤리 기준 이해로 안전한 생성형 AI 활용 역량 확보 프롬프트 작성 및 질"
+      },
+      {
+        "slide_idx": 26,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "고도화 과정 추가 선택 과정 Ⅳ. 추가 제안 Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 27,
+        "flags": "TABLE, IMG, MULTI-SHAPE(15)",
+        "text_preview": "#AX 리더십 # 팀단위 PoC #8 시간 #KHP-B 권 핵심 산출물 팀별 AI 적용 과제 (PoC) 기획서 및 업무 개선 실행안 No 구분 상세 내용 시간 1 AX 이해 및 역할 AX 시대 일하는 방식 변화 및 팀장 vs 팀원 역할 정의 1.5H 2 AI 트렌드 및"
+      },
+      {
+        "slide_idx": 28,
+        "flags": "TABLE, MULTI-SHAPE(14)",
+        "text_preview": "#AIAgent #VibeCoding # 성능평가 # KHP-B 권 핵심 산출물 정량적 지표 기반의 AI Agent 평가 리포트 및 최적화된 에이전트 구조도 No 구분 상세 내용 시간 1 AI Agent 란 ? 바이브코딩과의 차이 바이브코딩 ( 내가 만든 코드 ) 과 "
+      },
+      {
+        "slide_idx": 29,
+        "flags": "TABLE, MULTI-SHAPE(14)",
+        "text_preview": "# 제조데이터 # 머신러닝 #EDA 분석 # KHP-B 권 핵심 산출물 제조 현장 데이터 기반 머신러닝 모델링 결과 및 운영 모니터링 대시보드 No 구분 상세 내용 시간 1 데이터 구축 및 기획 제조 데이터 특성과 데이터 수집 전략 설명 데이터 소스·스키마 이해 및 수"
+      },
+      {
+        "slide_idx": 30,
+        "flags": "TABLE, MULTI-SHAPE(14)",
+        "text_preview": "３ . 추가 선택 과정 – 직군별 특화 과정 생성형 AI 의 이해부터 실무 프롬프트 작성과 부서별 업무 적용까지 , 현업 중심으로 AI 활용 역량을 높이는 실습형 과정입니다 . # 직무 맞춤 교육 # 생성형 AI #8 시간 # KHP-B 권 핵심 산출물 개인 업무 자동"
+      },
+      {
+        "slide_idx": 31,
+        "flags": "TABLE, MULTI-SHAPE(18)",
+        "text_preview": "기본 과정 #MS365 #8 시간 # 업무생산성 No 구분 상세 내용 시간 1 Copilot 및 MS365 개요 MS365 관리센터 기능 및 Copilot 작동 원리 이해 1.5H 2 Word with Copilot 자연어 프롬프트로 문서 초안 작성 , 요약 및 편집 "
+      },
+      {
+        "slide_idx": 32,
+        "flags": "TABLE, MULTI-SHAPE(18)",
+        "text_preview": "심화 과정 (Excel) #PowerQuery #8 시간 #DAX 함수 No 구분 상세 내용 시간 1 고급 함수 및 수식 다중 조건 IF, 텍스트 처리 , 날짜 계산 등 실무형 고급 함수 조합 및 활용 2H 2 Power Query 전처리 데이터 원본 연결 , 열 분할"
+      },
+      {
+        "slide_idx": 33,
+        "flags": "TABLE, MULTI-SHAPE(18)",
+        "text_preview": "심화 과정 ( 협업 ) # 회의자동화 #8 시간 # 전사공유전략 ３ . 추가 선택 과정 – Copilot 과정 Copilot 을 활용한 문서 생산 , 데이터 분석 , 협업 , 자동화 역량을 실습 중심으로 학습하여 업무 생산성을 혁신하는 과정입니다 . No 구분 상세 내"
+      },
+      {
+        "slide_idx": 34,
+        "flags": "TABLE, IMG, MULTI-SHAPE(15)",
+        "text_preview": "#PowerAutomate #NoCode #8 시간 # 반복업무제로 핵심 산출물 실무에 즉시 적용 가능한 개인 / 부서별 업무 자동화 워크플로우 No 구분 상세 내용 시간 1 자동화 기초 개념 Power Automate 기본 구조 ( Trigger, Action, Co"
+      },
+      {
+        "slide_idx": 35,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "강사 투입 계획 전담 교육 운영진 교육 운영 능력 강사 관리 방안 학습 관리 방안 PoC 검증 방안 디지털 전문 교육 시설 알파코 캠퍼스 Ⅴ. 운영 방안 Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 36,
+        "flags": "TABLE, IMG, MULTI-SHAPE(4)",
+        "text_preview": "1. 강사 투입 계획 ( 주강사 ) 전문성 검증을 거친 교수진과 실시간 피드백 채널을 기반으로 , 강의 품질과 학습 몰입도를 체계적으로 관리합니다 . 현대제철 Vibe Coding 교육 제안 강사진 주 강사 주 강사 1 주 강사 2 주 강사 3 주 강사 4 송치오 강사"
+      },
+      {
+        "slide_idx": 37,
+        "flags": "TABLE, MULTI-SHAPE(4)",
+        "text_preview": "1. 강사 투입 계획 ( 보조강사 ) 전문성 검증을 거친 교수진과 실시간 피드백 채널을 기반으로 , 강의 품질과 학습 몰입도를 체계적으로 관리합니다 . 현대제철 Vibe Coding 교육 제안 강사진 보조 강사 보조 강사 1 보조 강사 2 보조 강사 3 보조 강사 4 "
+      },
+      {
+        "slide_idx": 38,
+        "flags": "TABLE, IMG",
+        "text_preview": "2. 전담 교육 운영진 전체 일정에 제안사의 PM 과 전담 인력이 전 과정을 밀착 지원합니다 . 프로젝트 R&amp;R 수행 PM (Project Mgr.) 허선희 컨설팅사업본부 전략영업팀 / 책임컨설턴트 부산대학교 지역환경시스템공학 학사 전문분야 : 온 / 오프라인 "
+      },
+      {
+        "slide_idx": 39,
+        "flags": "MULTI-SHAPE(29)",
+        "text_preview": "3. 교육 운영 능력 교육 전 · 중 · 후 단계별 관리와 전담 운영그룹의 밀착 VOC 대응으로 학습 참여도와 만족도를 극대화합니다 . □ 담당자 및 학습자 VOC 밀착대응을 통한 운영관리 실시간 VOC 접수 및 처리  빠른 현장대응 적극적 사전 VOC 모니터링  "
+      },
+      {
+        "slide_idx": 40,
+        "flags": "MULTI-SHAPE(63)",
+        "text_preview": "4. 강사 관리 방안 선별 기준부터 교육 후 관리까지 , 메인강사 · 보조강사 · 운영 담당 3 인이 단계별 역할을 분담하여 교육 품질을 체계적으로 보장합니다 선별 기준 교육 전 준비 교육 중 교육 후 메인강사 강의·코칭 총괄 바이브코딩 실무 개발 경험 비개발자 교육 "
+      },
+      {
+        "slide_idx": 41,
+        "flags": "MULTI-SHAPE(53)",
+        "text_preview": "5. 과정별 학습관리 방안 사전 준비부터 교육 후 지속 관리까지 , 체계적인 3 단계 프로세스로 학습 성취도과 현업 적용률을 높입니다 . 체계적 프로젝트 수행 Process 에 따라 철저히 운영 사전 준비 교육 중 교육 후 1 Pain Point 사전 설문 반복 업무·"
+      },
+      {
+        "slide_idx": 42,
+        "flags": "TABLE",
+        "text_preview": "6. PoC 검증 방안 조직별 핵심 KPI 와 검증 기준을 사전 설정하여 , 현업 데이터 기반으로 PoC 성과를 객관적으로 측정합니다 . 구분 조직별 과제 ( 예 ) 핵심 KPI ( 예 ) 검증 기준 ( 예 ) 검증 방법 검증 절차 생산 / 공정 생산 최적화 , 공정 "
+      },
+      {
+        "slide_idx": 43,
+        "flags": "IMG, MULTI-SHAPE(272)",
+        "text_preview": "7. 디지털 전문 교육 시설 알파코 캠퍼스 IT 메카 성수에 최신 디지털 전문 교육 시설을 통한 디지털 인재 양성 최적화된 환경을 제공합니다 . 강의실 3 개 Consulting Room, DT Gym(lab) 강의실 4 개 Project Room 2 개 강의실 2 개"
+      },
+      {
+        "slide_idx": 44,
+        "flags": "IMG, MULTI-SHAPE(6)",
+        "text_preview": "7. 디지털 전문 교육 시설 알파코 캠퍼스 – 1 캠퍼스 Seoungsu HUB 1st Campus ※ 강의장 정원 : ACE (40 명 ), BEST (32 명 ), CHAMP (52 명 ) ※ GPU 노트북 및 서버 대여 서비스를 통해 IT 교육에 최적화 ※ 교육 "
+      },
+      {
+        "slide_idx": 45,
+        "flags": "IMG, MULTI-SHAPE(6)",
+        "text_preview": "7. 디지털 전문 교육 시설 알파코 캠퍼스 – 2 캠퍼스 IT 메카 성수에 최신 디지털 전문 교육 시설을 통한 디지털 인재 양성 최적화된 환경을 제공합니다 . Seoungsu HUB 2nd Campus ※ 강의장 정원 : ALPHA (35 명 ), BRAVO (36 명"
+      },
+      {
+        "slide_idx": 46,
+        "flags": "IMG, MULTI-SHAPE(6)",
+        "text_preview": "7. 디지털 전문 교육 시설 알파코 캠퍼스 – 3 캠퍼스 IT 메카 성수에 최신 디지털 전문 교육 시설을 통한 디지털 인재 양성 최적화된 환경을 제공합니다 . Seoungsu HUB 3rd Campus ※ 강의장 정원 : AGAIN (52 명 ), BEGIN (50 명"
+      },
+      {
+        "slide_idx": 47,
+        "flags": "IMG, MULTI-SHAPE(5)",
+        "text_preview": "상세 견적안 견적 「 AI 가 바꾸는 일하는 방식」 Vibe Coding 기반 업무자동화 교육"
+      },
+      {
+        "slide_idx": 48,
+        "flags": "TABLE, MULTI-SHAPE(5)",
+        "text_preview": "1. 상세 견적안 단위 : 천원 , VAT 별도 구분 비용항목 단가 수량 / 기간 견적 비고 Step1. 사전 기획 직접교육비 과정개발비 1,000 4 개 4,000 메인강사 350 1 명 / 16 시간 5,600 보조강사 50 1 명 / 16 시간 800 소계 10,"
+      },
+      {
+        "slide_idx": 49,
+        "flags": "IMG, MULTI-SHAPE(7)",
+        "text_preview": "문의 ㅣ 알파 코 전략영업팀 허선희 책임 : shheo @alpaco.co.kr/ 02-2163-5750 이승규 선임 : smvo0530@alpaco.co.kr/ 02-2163-5704 www.alpaco.co.kr Thank you End of Document AI와"
       }
     ],
     "알파코_IM증권_AX 역량개발 과정 제안서(260227).pptx": [

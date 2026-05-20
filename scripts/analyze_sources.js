@@ -79,6 +79,72 @@ const RECOMMENDATIONS = {
 };
 
 // ─────────────────────────────────────────────
+// 1-1. 신규 파일 기반 명시적 우선 대안
+//      analyze 단계에서 발견된 고품질 슬라이드를
+//      각 레이아웃 alternatives의 첫 번째로 고정
+// ─────────────────────────────────────────────
+const EXPLICIT_ALTERNATIVES = {
+  // ★현대제철 Vibe Coding (260424) 파일에서 발굴
+  CURRICULUM_TABLE: [
+    {
+      file_keyword: '현대제철',
+      slide_idx: 19,
+      note: '기초과정 상세 커리큘럼 — TABLE+SHAPE(15), 5열 구조 풍부',
+    },
+    {
+      file_keyword: '현대제철',
+      slide_idx: 20,
+      note: '심화과정 상세 커리큘럼 — TABLE+SHAPE(14), 산출물 명시',
+    },
+  ],
+  FLOW_CHART: [
+    {
+      file_keyword: '현대제철',
+      slide_idx: 15,
+      note: 'Learning Path 5단계 — SHAPE(31), 단계별 로드맵 구조',
+    },
+    {
+      file_keyword: '현대제철',
+      slide_idx: 6,
+      note: 'DX→AX 3단계 전환 — IMG+SHAPE(12), 시각적 흐름 명확',
+    },
+  ],
+  CLOSING_SLIDE: [
+    {
+      file_keyword: '현대제철',
+      slide_idx: 49,
+      note: '연락처(이메일+전화) 포함 엔딩 — IMG+SHAPE(7)',
+    },
+  ],
+  SECTION_DIVIDER: [
+    {
+      file_keyword: '현대제철',
+      slide_idx: 14,
+      note: '챕터 간지 — IMG+SHAPE(5), 깔끔한 섹션 구분',
+    },
+    {
+      file_keyword: '현대제철',
+      slide_idx: 10,
+      note: '과정 개요 간지 — IMG+SHAPE(5)',
+    },
+  ],
+  VENDOR_PROFILE: [
+    {
+      file_keyword: '현대제철',
+      slide_idx: 7,
+      note: '수행실적 레퍼런스 테이블 — TABLE, 레벨별 구분 명확',
+    },
+  ],
+  TITLE_SLIDE: [
+    {
+      file_keyword: '현대제철',
+      slide_idx: 1,
+      note: '표지 — IMG+SHAPE(5), 최신 디자인 (2026년)',
+    },
+  ],
+};
+
+// ─────────────────────────────────────────────
 // 2. 유틸리티 함수
 // ─────────────────────────────────────────────
 function extractText(xml, maxLen = 150) {
@@ -169,12 +235,35 @@ async function analyzeAllFiles() {
       continue;
     }
 
-    // 대안 슬라이드: 나머지 파일들의 첫 슬라이드 또는 비슷한 위치 슬라이드
+    // 대안 슬라이드: 명시적 우선 대안 먼저, 이후 휴리스틱 대안 추가
     const alternatives = [];
+
+    // (A) 명시적 대안 (EXPLICIT_ALTERNATIVES) 우선 삽입
+    const explicitList = EXPLICIT_ALTERNATIVES[layoutType] || [];
+    for (const ea of explicitList) {
+      const eaFile = pptxFiles.find(f => f.includes(ea.file_keyword));
+      if (!eaFile || eaFile === recFile) continue;
+      const eaSlides = fileData[eaFile] || [];
+      const eaSlide  = eaSlides.find(s => s.idx === ea.slide_idx);
+      if (eaSlide) {
+        alternatives.push({
+          file: eaFile,
+          slide_idx: eaSlide.idx,
+          text_preview: eaSlide.text,
+          flags: eaSlide.flags,
+          note: ea.note,
+        });
+      }
+    }
+
+    // (B) 휴리스틱 대안 (최대 3개까지 채우기)
     for (const fname of pptxFiles) {
       if (fname === recFile) continue;
+      // 이미 명시적 대안으로 추가된 파일은 중복 방지
+      if (alternatives.some(a => a.file === fname)) continue;
+      if (alternatives.length >= 3) break;
+
       const slides = fileData[fname] || [];
-      // 레이아웃 타입별 대안 위치 휴리스틱
       let altIdx = 1;
       if (layoutType === 'CLOSING_SLIDE') altIdx = slides.length;
       else if (layoutType === 'VENDOR_PROFILE') altIdx = Math.min(5, slides.length);
@@ -182,7 +271,7 @@ async function analyzeAllFiles() {
       else if (layoutType === 'EVALUATION_METRIC') altIdx = Math.max(1, Math.floor(slides.length * 0.7));
 
       const altSlide = slides.find(s => s.idx === altIdx);
-      if (altSlide && alternatives.length < 3) {
+      if (altSlide) {
         alternatives.push({
           file: fname,
           slide_idx: altSlide.idx,
