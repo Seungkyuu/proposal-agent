@@ -17,10 +17,9 @@ import json
 import os
 import copy
 from datetime import date
-from lxml import etree
 from pptx import Presentation
-from pptx.util import Inches, Pt
-from pptx.dml.color import RGBColor
+from pptx.util import Inches
+from pptx.oxml.ns import qn  # noqa — lxml은 python-pptx 설치 시 자동 포함
 
 # ─── 경로 설정 ────────────────────────────────────────────────────
 BASE_DIR     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

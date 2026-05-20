@@ -34,10 +34,10 @@ import sys
 import json
 import os
 import copy
-from lxml import etree
 from pptx import Presentation
 from pptx.util import Pt
-from pptx.dml.color import RGBColor
+from pptx.oxml.ns import qn
+from lxml import etree  # python-pptx 설치 시 자동 포함
 
 # ─── 경로 설정 ────────────────────────────────────────────────────
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
