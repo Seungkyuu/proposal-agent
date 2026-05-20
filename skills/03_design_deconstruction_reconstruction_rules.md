@@ -49,7 +49,13 @@
 
 ## 4. 백엔드(Python-pptx) 연동을 위한 메타데이터 구조 (JSON Bridge)
 
-에이전트는 분해한 기존 템플릿의 슬라이드 번호(Slide Index) 및 플레이스홀더 이름 정보를 감지하여, 백엔드가 원본 PPTX에서 특정 장표를 복제해서 쓸 수 있도록 아래와 같은 매핑 JSON을 뱉어야 한다.
+에이전트는 분해한 기존 템플릿의 슬라이드 번호(Slide Index) 및 플레이스홀더 이름 정보를 감지하여, 백엔드가 원본 PPTX에서 특정 장표를 복제해서 쓸 수 있도록 아래와 같은 매핑 JSON을 생성해야 한다.
+
+> **⚠️ JSON 구조 계약 (Skill 12 데이터 계약 준수 필수):**
+> 역공학 모드에서도 슬라이드 콘텐츠는 반드시 **Skill 12의 `content` 구조**를 따라야 한다.
+> - `clone_source_layout_idx`: 원본 템플릿의 복제 소스 슬라이드 인덱스 (Skill 12에 정의됨)
+> - `reconstruction_strategy`: 분석 단계의 내부 메타데이터 (렌더러에 함께 전달하되, 슬라이드 콘텐츠 필드와 분리 유지)
+> - `placeholders`(내부 분석 전용): 렌더러가 직접 소비하지 않음. 슬라이드 실제 텍스트는 `content.table_data`, `content.bullets` 등 Skill 12 표준 필드로 전달.
 
 ```json
 {
@@ -66,17 +72,22 @@
   "slides": [
     {
       "slide_number": 2,
+      "layout_type": "VENDOR_PROFILE",
       "clone_source_layout_idx": 1,
       "top_message": "검증된 프로젝트 수행 역량 기반 최적의 솔루션 제공",
-      "placeholders": {
-        "title_placeholder_text": "제안사 주요 대기업 DX 교육 실적 레퍼런스",
-        "reference_table_data": {
-          "headers": ["프로젝트명", "고객사", "만족도 평점"],
+      "content": {
+        "table_data": {
+          "headers": ["프로젝트명", "고객사", "규모", "만족도"],
           "rows": [
-            ["신임 팀장 대상 AI 혁신 과정", "H그룹", "4.9 / 5.0"],
-            ["No-Code 업무 자동화 구축 실전 워크숍", "L전자", "4.8 / 5.0"]
+            ["신임 팀장 대상 AI 혁신 과정", "H그룹", "50명", "4.9 / 5.0"],
+            ["No-Code 업무 자동화 구축 실전 워크숍", "L전자", "40명", "4.8 / 5.0"]
           ]
         }
+      },
+      "_placeholders_analysis": {
+        "title_placeholder_idx": 0,
+        "table_placeholder_idx": 1,
+        "note": "내부 분석 메타데이터 — 렌더러 소비 대상 아님"
       }
     }
   ]

@@ -164,7 +164,7 @@
       }
     }
   },
-  "required": ["metadata", "slides"]
+  "required": ["metadata", "design_system", "slides"]
 }
 ```
 

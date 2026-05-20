@@ -52,6 +52,12 @@
       "sub_text": "#334155",
       "accent_color": "#10B981",
       "accent_rgb": [16, 185, 129]
+    },
+    "font_metadata": {
+      "family": "나눔스퀘어 Neo",
+      "size_top_message_pt": 30,
+      "size_subheader_pt": 18,
+      "size_body_pt": 14
     }
   },
   "slides": [

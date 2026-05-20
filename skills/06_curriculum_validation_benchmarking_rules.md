@@ -79,6 +79,11 @@ AS < 85% 감지 시 에이전트는 아래 3단계 자동 보완 루프를 구�
     "right_block": {
       "title": "본 제안사 맞춤형 설계 안 (AS = 92%)",
       "bullets": ["S사 맞춤형 프롬프트 설계", "사내 보안 망분리 극복 Q&A 봇 제작", "업무 30% 절감 해커톤"]
+    },
+    "benchmarking_metadata": {
+      "alignment_score": 92,
+      "benchmark_sources": ["Stanford CS229", "Coursera AI for Everyone", "Google ML Crash Course"],
+      "degraded_mode": false
     }
   }
 }
