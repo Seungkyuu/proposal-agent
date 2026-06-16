@@ -1,13 +1,7 @@
 # Agent Skill: Agentic Logic Coherence & Multi-Step Change Propagation Rules (V4. Clean Setup)
 
 ## 1. 개요 (Overview)
-본 사양은 사용자가 4-Phase 파이프라인 진행 중 특정 단계의 기획 내용을 수정하거나 업데이트했을 때, 해당 수정 사항이 연관된 모든 전·후방 단계의 산출물 파일에 동적으로 전파(Propagation)되어 제안서 전체의 논리적 모순을 원천 차단하는 '에이전트 자가 정합성 유지 규칙'을 정의한다. 예산 및 강사진 변수는 배제한다.
-
-**파일 기반 전파 원칙:** 모든 수정 사항은 파일 체인을 통해 순차 전파된다.
-```
-research_brief.md → 00_requirements.md → 01_strategy.md → 02_structure.md → 03_content.md
-```
-수정이 발생한 Phase 파일부터 이후 모든 파일을 Dirty 상태로 마킹하고, GATE 재승인 전까지 다음 Phase 진입을 금지한다.
+본 사양은 사용자가 8단계 파이프라인 진행 중 특정 단계(State)의 기획 내용을 수정하거나 업데이트했을 때, 해당 수정 사항이 연관된 모든 전·후방 단계의 데이터셋에 동적으로 전파(Propagation)되어 제안서 전체의 논리적 모순을 원천 차단하는 '에이전트 자가 정합성 유지 규칙'을 정의한다. 예산 및 강사진 변수는 배제한다.
 
 ---
 
@@ -75,7 +69,7 @@ research_brief.md → 00_requirements.md → 01_strategy.md → 02_structure.md 
 
 ## 4. 정합성 검증 지표 및 예외 경고 (Coherence Metric)
 
-에이전트는 Phase 3 완료(03_content.md 저장) 전, 제안서 내에 논리적 모순이 존재하는지 아래 2대 모순 필터로 전수 검사한다.
+에이전트는 최종 PPTX 렌더링 데이터(JSON) 패키징 전, 제안서 내에 논리적 모순이 존재하는지 아래 2대 모순 필터로 전수 검사한다.
 
 1. **대상-난이도 불일치 검사 (Audience-Level Clash):**
    * **진단:** 대상 수강생 수준이 '비전공자/초급'인데 커리큘럼에 'Python 코딩', 'AI 에이전트 직접 코딩 구축' 등 무거운 실무가 포함되어 있는가?
@@ -90,4 +84,7 @@ research_brief.md → 00_requirements.md → 01_strategy.md → 02_structure.md 
      - 사용자 확인 없이 pitch_style을 변경하지 않음 (피치 스타일은 전략적 결정이므로 사용자 권한 보장)
 
 3. **신규: 도메인-커리큘럼 미연동 감지 (Domain-Curriculum Misalignment):**
-   * **진단:** 고객사 도메인이 "금융/보험"으로 명
+   * **진단:** 고객사 도메인이 "금융/보험"으로 명시되었으나 커리큘럼 내 실습 시나리오에 Skill 05 Section 4의 금융 도메인 키워드(여신 심사, 약관, 리포트)가 0건인가?
+   * **조치 유형: 자동 수정**
+     - Skill 05 Section 4의 해당 도메인 시나리오 템플릿을 CURRICULUM_TABLE rows에 자동 삽입
+     - 삽입 후 Skill 06 AS 재검증 실행

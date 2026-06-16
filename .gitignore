@@ -4,3 +4,17 @@ node_modules/
 __pycache__/
 *.pyc
 .DS_Store
+
+# 개발용 잔재 스크립트 (루트 레벨)
+deep_inspect.py
+gap_analysis.py
+inspect_pptx.py
+slide7_check.py
+spacing_check.py
+table_check.py
+title_check.py
+title_check2.py
+title_check3.py
+package.json
+package-lock.json
+requirements.txt

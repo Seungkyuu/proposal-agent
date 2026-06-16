@@ -13,9 +13,9 @@
 
 ```
 proposal-agent/
-├── skills/                          # 에이전트 행동 규칙 (11개 유효)
+├── skills/                          # 에이전트 행동 규칙 (12개 유효)
 │   ├── 00_requirements_definition_rules.md
-│   ├── 01_proposal_strategy_discovery_rules.md   ← research_brief.md 포맷 포함
+│   ├── 01_proposal_strategy_discovery_rules.md
 │   ├── 02_client_color_system_spec.md
 │   ├── 03_design_deconstruction_reconstruction_rules.md
 │   ├── 04_instructional_design_engine_rules.md
@@ -23,11 +23,10 @@ proposal-agent/
 │   ├── 06_curriculum_validation_benchmarking_rules.md
 │   ├── 07_b2b_proposal_copywriting_rules.md
 │   ├── 08_proposal_structure_and_operations_spec.md
-│   ├── 09_pipeline_orchestration_rules.md        ← 파이프라인 총괄
-│   ├── 10_agent_coherence_propagation_rules.md   ← 변경 전파 + 파일 체인
-│   ├── 15_content_design_output_spec.md          ← Phase 3 출력 표준 (마스터)
-│   └── _archive/                   # 폐기 파일 보관
-│       └── 11_pipeline_flow_validation.md        ← 09와 통합됨
+│   ├── 09_pipeline_orchestration_rules.md     ← 파이프라인 총괄
+│   ├── 10_agent_coherence_propagation_rules.md
+│   ├── 11_pipeline_flow_validation.md
+│   └── 15_content_design_output_spec.md       ← Phase 3 출력 표준
 │   (12, 13, 14는 DEPRECATED — 참조 금지)
 ├── scripts/
 │   └── new_client.py                # 새 고객사 폴더 생성 + 현황 조회
@@ -35,8 +34,7 @@ proposal-agent/
 │   └── clients/
 │       ├── _index.md                # 전체 고객사 현황 대시보드
 │       └── [고객사명]_[날짜]/
-│           ├── metadata.json        # 고객사 기본정보 + Phase 상태 + 도구 체계
-│           ├── research_brief.md    # Phase 1 리서치 발견 (관통성 기준점)
+│           ├── metadata.json        # 고객사 기본정보 + Phase 상태
 │           ├── 00_requirements.md   # Phase 0 산출물
 │           ├── 01_strategy.md       # Phase 1 기획안
 │           ├── 02_structure.md      # Phase 2 슬라이드 구조
@@ -51,7 +49,7 @@ proposal-agent/
 | Phase | 산출물 | 저장 파일 | GATE |
 |-------|--------|---------|------|
 | **Phase 0** | 요구사항 정의서 (5개 블록 질문) | `00_requirements.md` | GATE 0 |
-| **Phase 1** | 리서치 브리프 + 기획안 (전략·커리큘럼·카피·디자인 시스템) | `research_brief.md` + `01_strategy.md` | GATE 1 |
+| **Phase 1** | 기획안 (전략 + 커리큘럼 + 카피 + 디자인 시스템) | `01_strategy.md` | GATE 1 |
 | **Phase 2** | 슬라이드 구조 설계 | `02_structure.md` | GATE 2 |
 | **Phase 3** | 슬라이드별 콘텐츠 (복붙용 텍스트) | `03_content.md` | — |
 
@@ -107,8 +105,20 @@ Claude가 `output/clients/동대문구시설관리공단_*/` 폴더를 읽어 �
 - **Phase 0 최우선 실행**: 고객사명 입력 시 즉시 5개 블록 질문 시작
 - **GATE 없이 진행 금지**: 각 Phase 완료 후 사용자 승인 대기
 - **각 Phase 완료 시 파일 저장**: 승인 받은 즉시 해당 .md 파일에 기록하고 metadata.json Phase 상태 업데이트
-- **research_brief.md 먼저 저장**: Phase 1 시작 직후 리서치 완료 즉시 research_brief.md 저장 → 이후 모든 산출물의 관통성 기준점으로 사용 (Skill 01 §7)
-- **강사 개인 프로필 절대 금지**: 강사 이름·약력·이력 불포함 (Skill 01 §8)
-- **금지 어휘**: `이해`, `파악`, `학습`, `교육`, `습득` (Skill 15 §2-1이 마스터)
+- **강사 개인 프로필 절대 금지**: 강사 이름·약력·이력 불포함 (Skill 01 §7)
+- **금지 어휘**: `이해`, `파악`, `학습`, `교육`, `습득` (Skill 07 / Skill 15 §2-1)
 - **타 고객사명 금지**: 실적 슬라이드 외 다른 고객사명 언급 금지
-- **망분리 환경 확인**: 인터넷 접속 여부에 따라 실습 도구 전면 �
+- **망분리 환경 확인**: 인터넷 접속 여부에 따라 실습 도구 전면 변경 (Skill 05 §4-1)
+- **Phase 3 출력 포맷**: 반드시 Skill 15 §4 포맷을 100% 준수하여 03_content.md 생성
+- **브랜드 컬러**: Phase 1에서 고객사 브랜드 컬러 확보 → 01_strategy.md 디자인 시스템 블록에 명시 (Skill 02 §4)
+
+---
+
+## 의존성
+
+```bash
+# Phase 파일 생성 — Python 표준 라이브러리만 사용
+python scripts/new_client.py
+```
+
+> python-pptx는 더 이상 사용하지 않습니다. PPTX 제작은 사용자가 03_content.md를 참고하여 직접 수행합니다.
