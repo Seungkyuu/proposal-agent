@@ -1,0 +1,16 @@
+{
+  "client_name": "한화에어로스페이스",
+  "topic": "신입사원 입문과정 AI 역량 강화 과정 (9H)",
+  "contact": "jonghyun.p@hanwha.com",
+  "created_at": "2026-05-28",
+  "updated_at": "2026-05-29",
+  "deadline": "2025-06-02",
+  "current_phase": 3,
+  "phase_status": {
+    "0": "completed",
+    "1": "completed",
+    "2": "completed",
+    "3": "completed"
+  },
+  "notes": "총 240명 (1차 150 / 2차 90) / 9H×2차수 / 양평 블룸비스타 오프라인 / 외부망 사용 가능 / ChatGPT OSS·GEMMA4 주력 / 제출기한 2025-06-02 / 브랜드컬러 #F37321 (Hanwha Orange) / ID모델: SAM (M=3.00) / AS: 83.3%→100% / 검증완료 2026-05-29"
+}

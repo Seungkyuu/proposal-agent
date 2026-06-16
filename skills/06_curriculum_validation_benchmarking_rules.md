@@ -62,32 +62,19 @@ AS < 85% 감지 시 에이전트는 아래 3단계 자동 보완 루프를 구�
 
 ---
 
-## 4. 제안서 내 '벤치마크 및 정합성 검증' 슬라이드 출력 규격
+## 4. 벤치마킹 결과 활용 규칙
 
-에이전트는 검증 결과를 바탕으로 제안서 내에 "글로벌 표준 벤치마킹 및 검증 내역" 슬라이드를 인포그래픽 형태로 구성하도록 데이터를 전송한다.
+> **⚠️ 핵심 원칙: 벤치마킹 AS 검증은 내부 커리큘럼 품질 관리 도구다. 고객사 제안서 슬라이드로 출력하지 않는다.**
 
-### [데이터 구조 (JSON 계약 연동)]
-```json
-{
-  "layout_type": "COMPARISON_BENCHMARK",
-  "top_message": "글로벌 Top-tier 교육과정 분석을 통한 실무 정합성 및 공신력 검증 완료",
-  "content": {
-    "left_block": {
-      "title": "Stanford/Coursera 표준 커리큘럼",
-      "bullets": ["업무 자동화 개론", "API 프롬프트 엔지니어링", "RAG 기반 사내 정보 검색"]
-    },
-    "right_block": {
-      "title": "본 제안사 맞춤형 설계 안 (AS = 92%)",
-      "bullets": ["S사 맞춤형 프롬프트 설계", "사내 보안 망분리 극복 Q&A 봇 제작", "업무 30% 절감 해커톤"]
-    },
-    "benchmarking_metadata": {
-      "alignment_score": 92,
-      "benchmark_sources": ["Stanford CS229", "Coursera AI for Everyone", "Google ML Crash Course"],
-      "degraded_mode": false
-    }
-  }
-}
-```
+### 내부 활용 (허용)
+- AS 점수는 Skill 09 Phase 1 Integrity Pass Audit 보고서에 기재하여 에이전트 자가 검증 용도로만 사용
+- AS < 85% 시 커리큘럼 자동 보완 후 재검증 (Section 3-1 실행)
+- 검증 결과는 Phase 1 GATE 보고서에 `[CV: PASS/FAIL] 벤치마킹 AS ≥ 85%` 형식으로 표기
+
+### 제안서 슬라이드 출력 (금지)
+- `COMPARISON_BENCHMARK` layout_type을 고객사 제안서 슬라이드로 생성하지 않는다.
+- "커리큘럼 정합성 88%" 같은 수치를 고객사에게 직접 제시하지 않는다.
+- 이유: 벤치마킹 수치는 내부 검증 지표이며, 고객사 의사결정 근거 자료로 적합하지 않다.
 
 ---
 

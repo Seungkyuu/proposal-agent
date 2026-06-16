@@ -1,12 +1,20 @@
-# B2B 교육 제안서 자동 기획 에이전트
+# 알파코 B2B 교육 제안서 자동 기획 에이전트
 
-## 프로젝트 개요
-고객사명과 교육 주제를 입력하면 3-Phase 파이프라인으로 B2B 교육 제안서 기획안을 자동 수립하고, 최종적으로 PPTX 렌더링용 JSON을 생성하는 에이전트.
+## 역할 분담
+- **Claude (나)**: 제안서 콘텐츠 작성 (전략, 커리큘럼, 카피라이팅, 슬라이드별 텍스트)
+- **사용자**: 레이아웃·디자인·PPTX 직접 제작 (03_content.md 텍스트를 복붙하여 제작)
+
+> **Phase 4(python-pptx 자동 렌더러)는 완성도 문제로 파이프라인에서 제거되었다.**
+> Skills 12, 13, 14는 폐기(DEPRECATED) 상태이며 참조하지 않는다.
+
+---
 
 ## 디렉터리 구조
+
 ```
 proposal-agent/
-├── skills/                          # 12개 마스터 룰북 (에이전트 두뇌)
+├── skills/                          # 에이전트 행동 규칙 (12개 유효)
+│   ├── 00_requirements_definition_rules.md
 │   ├── 01_proposal_strategy_discovery_rules.md
 │   ├── 02_client_color_system_spec.md
 │   ├── 03_design_deconstruction_reconstruction_rules.md
@@ -15,79 +23,102 @@ proposal-agent/
 │   ├── 06_curriculum_validation_benchmarking_rules.md
 │   ├── 07_b2b_proposal_copywriting_rules.md
 │   ├── 08_proposal_structure_and_operations_spec.md
-│   ├── 09_pipeline_orchestration_rules.md
+│   ├── 09_pipeline_orchestration_rules.md     ← 파이프라인 총괄
 │   ├── 10_agent_coherence_propagation_rules.md
 │   ├── 11_pipeline_flow_validation.md
-│   └── 12_data_contract_schema_spec.md
-├── templates/                       # 템플릿 라이브러리 (디자인 DNA)
-│   ├── source_decks/                # 알파코 기존 제안서 PPTX (원본 소스)
-│   ├── master/                      # 컴파일된 마스터 덱
-│   │   ├── alpaco_master.pptx       # 레이아웃 모음 (11슬라이드)
-│   │   └── slide_index.json         # layout_type → 마스터 슬라이드 번호 매핑
-│   └── slide_catalog.json           # 소스 파일별 슬라이드 분석 + 추천
+│   └── 15_content_design_output_spec.md       ← Phase 3 출력 표준
+│   (12, 13, 14는 DEPRECATED — 참조 금지)
 ├── scripts/
-│   ├── analyze_sources.js           # 소스 PPTX 분석 → slide_catalog.json 생성 (Node.js)
-│   └── compile_master.py            # slide_catalog → alpaco_master.pptx 컴파일 (Python)
-├── renderer/
-│   └── pptx_builder.py              # 마스터 덱 클론 + 텍스트 주입 렌더러 (Python)
-├── chatbot/                         # Claude API 터미널 챗봇 (예정)
-│   └── agent.py
-├── output/                          # 생성된 제안서 PPTX 저장
+│   └── new_client.py                # 새 고객사 폴더 생성 + 현황 조회
+├── output/
+│   └── clients/
+│       ├── _index.md                # 전체 고객사 현황 대시보드
+│       └── [고객사명]_[날짜]/
+│           ├── metadata.json        # 고객사 기본정보 + Phase 상태
+│           ├── 00_requirements.md   # Phase 0 산출물
+│           ├── 01_strategy.md       # Phase 1 기획안
+│           ├── 02_structure.md      # Phase 2 슬라이드 구조
+│           └── 03_content.md        # Phase 3 최종 콘텐츠 (복붙용)
 └── CLAUDE.md
 ```
 
-## 렌더링 아키텍처 (V2 — 템플릿 클론 방식)
+---
 
+## 4-Phase 파이프라인
+
+| Phase | 산출물 | 저장 파일 | GATE |
+|-------|--------|---------|------|
+| **Phase 0** | 요구사항 정의서 (5개 블록 질문) | `00_requirements.md` | GATE 0 |
+| **Phase 1** | 기획안 (전략 + 커리큘럼 + 카피 + 디자인 시스템) | `01_strategy.md` | GATE 1 |
+| **Phase 2** | 슬라이드 구조 설계 | `02_structure.md` | GATE 2 |
+| **Phase 3** | 슬라이드별 콘텐츠 (복붙용 텍스트) | `03_content.md` | — |
+
+---
+
+## 슬라이드별 텍스트 출력 형식
+
+Phase 3 완료 시 `03_content.md`에 아래 형식으로 저장 (Skill 15 §4 포맷 100% 준수):
+
+```markdown
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+슬라이드 02 | 제안 배경
+레이아웃 힌트: 좌우 2컬럼 비교 (layout_type: PROBLEM_VS_SOLUTION)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[상단 메시지]
+AI 혁신 비전 선포 이후
+현장 실행력 확보가 핵심 과제
+
+[왼쪽 — 현재의 한계]
+• ...
+• ...
+
+[오른쪽 — 교육 후 전환 성과]
+• ...
+• ...
 ```
-[소스 PPTX 12개]  →  analyze_sources.js  →  slide_catalog.json
-                       compile_master.py  →  alpaco_master.pptx + slide_index.json
-[Claude 콘텐츠 JSON]  →  pptx_builder.py  →  최종 제안서.pptx
-```
 
-**핵심 원칙:** 에이전트는 디자인을 코드로 생성하지 않는다.
-알파코 실제 슬라이드를 복제하고 텍스트만 교체한다.
+---
 
-## 4+1 Phase 파이프라인
+## 새 고객사 시작 방법
 
-| 페이즈 | 스킬 | 주요 출력 |
-|--------|------|-----------|
-| **Phase 0** | 01 §0 | 제안사 자산 Pre-Flight 체크 (PPTX양식/브랜드/레퍼런스) |
-| Phase 1 | 01~03 | 고객사 리서치 + 기획서 초안 + 브랜드 컬러 |
-| Phase 2 | 04~07 | 교수설계 모델 + 커리큘럼 + 벤치마크 검증 |
-| Phase 3 | 08~12 | USP + KPI + JSON 데이터 패키지 |
-| Phase 4 | renderer | 마스터 덱 클론 → PPTX 실물 파일 생성 |
-
-## 렌더러 실행 방법
-
+### 방법 1 — 스크립트
 ```bash
-# 1. 소스 분석 (최초 1회)
-node scripts/analyze_sources.js
-
-# 2. 마스터 덱 컴파일 (최초 1회 또는 소스 변경 시)
-pip install python-pptx
-python scripts/compile_master.py
-
-# 3. 제안서 생성
-python renderer/pptx_builder.py output/proposal.json output/result.pptx
+python scripts/new_client.py "고객사명" "교육 주제"
 ```
 
-## 에이전트 행동 규칙
-- **Phase 0 필수**: 고객사명 입력 전 PPTX 양식·브랜드 가이드·레퍼런스 덱 확인 (스킬 01 §0)
-- 고객사명 + 교육 주제 입력 즉시 웹 검색 선행 (스킬 01 참조)
-- 각 Phase 완료 후 반드시 Integrity Pass Audit 보고서 출력 (스킬 09 참조)
-- 강사 개인 프로필/이력은 제안서에 절대 포함 금지 (스킬 01 §7)
-- 카피라이팅 금지 어휘: `이해`, `파악`, `학습`, `교육`, `습득` (스킬 07 참조)
-- JSON 출력 시 null 값 금지 — 빈 문자열("") 또는 빈 배열([]) 사용 (스킬 12 참조)
-
-## API 키 설정 (필수)
-```bash
-# .env 파일 생성 후 Anthropic API 키 입력
-ANTHROPIC_API_KEY=sk-ant-...
+### 방법 2 — 직접 대화
 ```
-API 키는 https://console.anthropic.com 에서 발급.
+고객사: 동대문구시설관리공단, 교육 주제: AI 업무혁신 3일 과정
+```
+Claude가 Phase 0 질문부터 자동 시작, 각 Phase 완료 시 파일 자동 저장
+
+### 기존 작업 이어받기
+```
+동대문구시설관리공단 제안서 이어서 해줘
+```
+Claude가 `output/clients/동대문구시설관리공단_*/` 폴더를 읽어 중단된 Phase부터 재개
+
+---
+
+## 에이전트 핵심 행동 규칙
+
+- **Phase 0 최우선 실행**: 고객사명 입력 시 즉시 5개 블록 질문 시작
+- **GATE 없이 진행 금지**: 각 Phase 완료 후 사용자 승인 대기
+- **각 Phase 완료 시 파일 저장**: 승인 받은 즉시 해당 .md 파일에 기록하고 metadata.json Phase 상태 업데이트
+- **강사 개인 프로필 절대 금지**: 강사 이름·약력·이력 불포함 (Skill 01 §7)
+- **금지 어휘**: `이해`, `파악`, `학습`, `교육`, `습득` (Skill 07 / Skill 15 §2-1)
+- **타 고객사명 금지**: 실적 슬라이드 외 다른 고객사명 언급 금지
+- **망분리 환경 확인**: 인터넷 접속 여부에 따라 실습 도구 전면 변경 (Skill 05 §4-1)
+- **Phase 3 출력 포맷**: 반드시 Skill 15 §4 포맷을 100% 준수하여 03_content.md 생성
+- **브랜드 컬러**: Phase 1에서 고객사 브랜드 컬러 확보 → 01_strategy.md 디자인 시스템 블록에 명시 (Skill 02 §4)
+
+---
 
 ## 의존성
+
 ```bash
-pip install python-pptx   # 렌더러 실행에 필요
-# Node.js v18+ 필요 (analyze_sources.js 실행)
+# Phase 파일 생성 — Python 표준 라이브러리만 사용
+python scripts/new_client.py
 ```
+
+> python-pptx는 더 이상 사용하지 않습니다. PPTX 제작은 사용자가 03_content.md를 참고하여 직접 수행합니다.

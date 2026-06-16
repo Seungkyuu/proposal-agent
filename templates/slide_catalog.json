@@ -5,6 +5,23 @@
   "total_source_slides": 410,
   "note": "추천 슬라이드는 텍스트 분석 기반 1차 추천입니다. PowerPoint에서 시각 확인 후 alternatives 중 교체 가능합니다.",
   "layouts": {
+    "COMPANY_INTRO": {
+      "description": "알파코 회사 소개 슬라이드 — 소스 덱에서 그대로 복제 (텍스트 교체 없음)",
+      "recommended": {
+        "file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
+        "slide_idx": 14,
+        "text_preview": "1. 회사 개요 디지털 격차 해소 전국민 디지털역량 강화",
+        "flags": "IMG, MULTI-SHAPE(28)"
+      },
+      "alternatives": [
+        {
+          "file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
+          "slide_idx": 21,
+          "text_preview": "알파코 회사 개요",
+          "flags": "MULTI-SHAPE"
+        }
+      ]
+    },
     "TITLE_SLIDE": {
       "description": "표지 슬라이드 — 교육과정명·제안사·날짜",
       "recommended": {

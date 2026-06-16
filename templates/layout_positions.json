@@ -1,0 +1,417 @@
+{
+  "_comment": "슬라이드 크기: 33.867cm × 19.05cm (Widescreen 16:9) = 12192768 EMU × 6858000 EMU",
+  "_units": "EMU (English Metric Units). 1cm = 360000 EMU. 1pt = 12700 EMU.",
+  "_slide_size": {"width_emu": 12192768, "height_emu": 6858000},
+
+  "TITLE_SLIDE": {
+    "_hint": "표지: 메인 제목 + 부제 + 하단 정보",
+    "boxes": [
+      {
+        "id": "main_title",
+        "label": "메인 제목",
+        "left_cm": 1.5, "top_cm": 2.5, "width_cm": 30.0, "height_cm": 5.5,
+        "font_size_pt": 36, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "sub_title",
+        "label": "부제목",
+        "left_cm": 1.5, "top_cm": 8.5, "width_cm": 30.0, "height_cm": 1.5,
+        "font_size_pt": 18, "bold": false, "color": "#6B7280",
+        "align": "left"
+      },
+      {
+        "id": "bottom_info",
+        "label": "하단 정보 (날짜/대상/시간)",
+        "left_cm": 1.5, "top_cm": 10.3, "width_cm": 30.0, "height_cm": 1.0,
+        "font_size_pt": 12, "bold": false, "color": "#6B7280",
+        "align": "left"
+      }
+    ]
+  },
+
+  "TABLE_OF_CONTENTS": {
+    "_hint": "목차: 제목 + 항목 리스트",
+    "boxes": [
+      {
+        "id": "toc_title",
+        "label": "CONTENTS 제목",
+        "left_cm": 1.5, "top_cm": 0.8, "width_cm": 10.0, "height_cm": 1.2,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left",
+        "bg_color": null
+      },
+      {
+        "id": "toc_items",
+        "label": "목차 항목들 (줄바꿈 구분)",
+        "left_cm": 1.5, "top_cm": 2.5, "width_cm": 28.0, "height_cm": 6.0,
+        "font_size_pt": 16, "bold": false, "color": "#1A1A2E",
+        "align": "left",
+        "line_spacing_pt": 10
+      }
+    ]
+  },
+
+  "SECTION_DIVIDER": {
+    "_hint": "섹션 구분: Accent 배경, 번호 + 제목",
+    "boxes": [
+      {
+        "id": "section_number",
+        "label": "섹션 번호 (Section N)",
+        "left_cm": 1.5, "top_cm": 3.5, "width_cm": 12.0, "height_cm": 2.0,
+        "font_size_pt": 48, "bold": true, "color": "ACCENT",
+        "align": "left"
+      },
+      {
+        "id": "section_title",
+        "label": "섹션 제목",
+        "left_cm": 1.5, "top_cm": 6.0, "width_cm": 20.0, "height_cm": 1.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      }
+    ]
+  },
+
+  "PROBLEM_VS_SOLUTION": {
+    "_hint": "좌우 2컬럼 비교: 상단 메시지 + 좌(As-Is) + 우(To-Be)",
+    "boxes": [
+      {
+        "id": "top_message",
+        "label": "상단 메시지 (2줄)",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 2.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "left_header",
+        "label": "왼쪽 헤더 (As-Is)",
+        "left_cm": 0.8, "top_cm": 3.8, "width_cm": 15.5, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "left_body",
+        "label": "왼쪽 불릿 (현재의 한계)",
+        "left_cm": 0.8, "top_cm": 5.0, "width_cm": 15.5, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "right_header",
+        "label": "오른쪽 헤더 (To-Be)",
+        "left_cm": 17.5, "top_cm": 3.8, "width_cm": 15.5, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "right_body",
+        "label": "오른쪽 불릿 (전환 성과)",
+        "left_cm": 17.5, "top_cm": 5.0, "width_cm": 15.5, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      }
+    ]
+  },
+
+  "VENDOR_PROFILE": {
+    "_hint": "수행 실적: 상단 메시지 + 테이블 (헤더 + 데이터 행)",
+    "boxes": [
+      {
+        "id": "top_message",
+        "label": "상단 메시지 (2줄)",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 2.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      }
+    ],
+    "table": {
+      "left_cm": 0.8, "top_cm": 3.3, "width_cm": 31.4, "height_cm": 5.2,
+      "header_bg": "ACCENT",
+      "header_font_pt": 12, "header_bold": true, "header_color": "#FFFFFF",
+      "data_font_pt": 11, "data_bold": false, "data_color": "#6B7280",
+      "alt_row_bg": "#F8FAFC"
+    }
+  },
+
+  "FLOW_CHART": {
+    "_hint": "가로 3단계 플로우: 상단 메시지 + STEP 카드 3개",
+    "boxes": [
+      {
+        "id": "top_message",
+        "label": "상단 메시지 (2줄)",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 2.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "step1_header",
+        "label": "STEP 1 헤더",
+        "left_cm": 0.6, "top_cm": 3.5, "width_cm": 10.2, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "step1_body",
+        "label": "STEP 1 설명",
+        "left_cm": 0.6, "top_cm": 4.7, "width_cm": 10.2, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "step2_header",
+        "label": "STEP 2 헤더",
+        "left_cm": 11.7, "top_cm": 3.5, "width_cm": 10.2, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "step2_body",
+        "label": "STEP 2 설명",
+        "left_cm": 11.7, "top_cm": 4.7, "width_cm": 10.2, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "step3_header",
+        "label": "STEP 3 헤더",
+        "left_cm": 22.8, "top_cm": 3.5, "width_cm": 10.2, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "step3_body",
+        "label": "STEP 3 설명",
+        "left_cm": 22.8, "top_cm": 4.7, "width_cm": 10.2, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      }
+    ]
+  },
+
+  "COMPARISON_BENCHMARK": {
+    "_hint": "좌우 비교 + 하단 테이블: 상단 메시지 + 좌블록 + 우블록 + 테이블",
+    "boxes": [
+      {
+        "id": "top_message",
+        "label": "상단 메시지 (2줄)",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 2.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "left_header",
+        "label": "왼쪽 헤더",
+        "left_cm": 0.8, "top_cm": 3.8, "width_cm": 15.5, "height_cm": 1.0,
+        "font_size_pt": 16, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "left_body",
+        "label": "왼쪽 내용 불릿",
+        "left_cm": 0.8, "top_cm": 5.0, "width_cm": 15.5, "height_cm": 2.2,
+        "font_size_pt": 13, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "right_header",
+        "label": "오른쪽 헤더",
+        "left_cm": 17.5, "top_cm": 3.8, "width_cm": 15.5, "height_cm": 1.0,
+        "font_size_pt": 16, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "right_body",
+        "label": "오른쪽 내용 불릿",
+        "left_cm": 17.5, "top_cm": 5.0, "width_cm": 15.5, "height_cm": 2.2,
+        "font_size_pt": 13, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      }
+    ],
+    "table": {
+      "left_cm": 0.8, "top_cm": 7.5, "width_cm": 31.4, "height_cm": 2.0,
+      "header_bg": "ACCENT",
+      "header_font_pt": 11, "header_bold": true, "header_color": "#FFFFFF",
+      "data_font_pt": 10, "data_bold": false, "data_color": "#6B7280",
+      "alt_row_bg": "#F8FAFC"
+    }
+  },
+
+  "N_COLUMN_CARDS": {
+    "_hint": "3컬럼 카드: 상단 메시지 + 카드 3개 (헤더+본문)",
+    "boxes": [
+      {
+        "id": "top_message",
+        "label": "상단 메시지 (2줄)",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 2.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "card1_header",
+        "label": "카드 1 헤더",
+        "left_cm": 0.6, "top_cm": 3.5, "width_cm": 10.2, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "card1_body",
+        "label": "카드 1 본문",
+        "left_cm": 0.6, "top_cm": 4.7, "width_cm": 10.2, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "card2_header",
+        "label": "카드 2 헤더",
+        "left_cm": 11.7, "top_cm": 3.5, "width_cm": 10.2, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "card2_body",
+        "label": "카드 2 본문",
+        "left_cm": 11.7, "top_cm": 4.7, "width_cm": 10.2, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "card3_header",
+        "label": "카드 3 헤더",
+        "left_cm": 22.8, "top_cm": 3.5, "width_cm": 10.2, "height_cm": 1.0,
+        "font_size_pt": 18, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "card3_body",
+        "label": "카드 3 본문",
+        "left_cm": 22.8, "top_cm": 4.7, "width_cm": 10.2, "height_cm": 4.5,
+        "font_size_pt": 14, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      }
+    ]
+  },
+
+  "CURRICULUM_TABLE": {
+    "_hint": "커리큘럼 표: 슬라이드 제목 + 목표 텍스트 + 5열 테이블",
+    "boxes": [
+      {
+        "id": "slide_title",
+        "label": "슬라이드 제목",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 1.5,
+        "font_size_pt": 24, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "course_goal",
+        "label": "과목 목표 (한 문장)",
+        "left_cm": 1.5, "top_cm": 2.2, "width_cm": 30.0, "height_cm": 1.0,
+        "font_size_pt": 14, "bold": false, "color": "#6B7280",
+        "align": "left"
+      }
+    ],
+    "table": {
+      "left_cm": 0.5, "top_cm": 3.4, "width_cm": 32.4, "height_cm": 5.2,
+      "header_bg": "ACCENT",
+      "header_font_pt": 12, "header_bold": true, "header_color": "#FFFFFF",
+      "data_font_pt": 11, "data_bold": false, "data_color": "#1A1A2E",
+      "alt_row_bg": "#F8FAFC",
+      "col_widths_pct": [15, 18, 25, 22, 20]
+    }
+  },
+
+  "EVALUATION_METRIC": {
+    "_hint": "KPI 평가: 상단 메시지 + 4개 Level 카드 (가로 4열)",
+    "boxes": [
+      {
+        "id": "top_message",
+        "label": "상단 메시지 (2줄)",
+        "left_cm": 1.5, "top_cm": 0.5, "width_cm": 30.0, "height_cm": 2.5,
+        "font_size_pt": 30, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "level1_header",
+        "label": "Level 1 헤더",
+        "left_cm": 0.6, "top_cm": 3.5, "width_cm": 7.5, "height_cm": 1.0,
+        "font_size_pt": 15, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "level1_body",
+        "label": "Level 1 본문",
+        "left_cm": 0.6, "top_cm": 4.7, "width_cm": 7.5, "height_cm": 4.0,
+        "font_size_pt": 13, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "level2_header",
+        "label": "Level 2 헤더",
+        "left_cm": 9.0, "top_cm": 3.5, "width_cm": 7.5, "height_cm": 1.0,
+        "font_size_pt": 15, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "level2_body",
+        "label": "Level 2 본문",
+        "left_cm": 9.0, "top_cm": 4.7, "width_cm": 7.5, "height_cm": 4.0,
+        "font_size_pt": 13, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "level3_header",
+        "label": "Level 3 헤더",
+        "left_cm": 17.4, "top_cm": 3.5, "width_cm": 7.5, "height_cm": 1.0,
+        "font_size_pt": 15, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "level3_body",
+        "label": "Level 3 본문",
+        "left_cm": 17.4, "top_cm": 4.7, "width_cm": 7.5, "height_cm": 4.0,
+        "font_size_pt": 13, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "level4_header",
+        "label": "Level 4 헤더",
+        "left_cm": 25.8, "top_cm": 3.5, "width_cm": 7.5, "height_cm": 1.0,
+        "font_size_pt": 15, "bold": true, "color": "#FFFFFF",
+        "align": "center", "bg_color": "ACCENT"
+      },
+      {
+        "id": "level4_body",
+        "label": "Level 4 본문",
+        "left_cm": 25.8, "top_cm": 4.7, "width_cm": 7.5, "height_cm": 4.0,
+        "font_size_pt": 13, "bold": false, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "footnote",
+        "label": "하단 주석 (선택)",
+        "left_cm": 0.6, "top_cm": 9.0, "width_cm": 32.0, "height_cm": 0.6,
+        "font_size_pt": 10, "bold": false, "color": "#6B7280",
+        "align": "left"
+      }
+    ]
+  },
+
+  "CLOSING_SLIDE": {
+    "_hint": "마감: 메인 메시지 + 연락처",
+    "boxes": [
+      {
+        "id": "main_message",
+        "label": "메인 메시지 (2~3줄)",
+        "left_cm": 1.5, "top_cm": 2.5, "width_cm": 22.0, "height_cm": 3.5,
+        "font_size_pt": 28, "bold": true, "color": "#1A1A2E",
+        "align": "left"
+      },
+      {
+        "id": "contact_info",
+        "label": "연락처 (제안사/담당자/이메일/전화)",
+        "left_cm": 1.5, "top_cm": 6.3, "width_cm": 22.0, "height_cm": 1.8,
+        "font_size_pt": 14, "bold": false, "color": "#6B7280",
+        "align": "left"
+      }
+    ]
+  }
+}

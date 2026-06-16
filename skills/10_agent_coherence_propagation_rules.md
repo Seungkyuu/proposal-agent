@@ -31,9 +31,19 @@
 │     ➔ [영향 영역] Step 5(Skill 05 Section 3의 이론:실습 비율 재조정),
 │                   Step 7(KPI 평가 기준: 초급→반응/이해도 중심, 고급→행동변화/ROI 중심)
 │
-└── 6. 브랜드 컬러 재지정(Color Override)
-      ➔ [영향 영역] Step 2(Skill 02의 60-30-10 팔레트 재계산),
-                    Step 3(Skill 08 제안사 소개 슬라이드의 accent_color 동기화)
+├── 6. 브랜드 컬러 재지정(Color Override)
+│     ➔ [영향 영역] Step 2(Skill 02의 60-30-10 팔레트 재계산),
+│                   Step 3(Skill 08 제안사 소개 슬라이드의 accent_color 동기화)
+│
+├── 7. 인터넷 환경(Internet Access) 변경
+│     ➔ [영향 영역] Step 5(Skill 05 §4-1 실습 도구 전면 재선택),
+│                   커리큘럼 내 클라우드 도구 전부 대체 또는 로컬 도구로 교체
+│                   → 교육 시간·난이도·산출물 재산정 필요
+│
+└── 8. KPI·사후관리 납품 범위(Scope) 변경
+      ➔ [영향 영역] Skill 08 S5-2(EVALUATION_METRIC 슬라이드 내용 재작성),
+                    JSON의 해당 슬라이드 content 필드 재생성
+                    확정 범위 외 항목은 슬라이드에서 즉시 제거
 ```
 
 ---

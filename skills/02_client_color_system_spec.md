@@ -38,59 +38,21 @@
 
 ---
 
-## 4. 데이터 전송 규격 (JSON Schema 확장)
+## 4. 컬러 시스템 명시 규격 (01_strategy.md 기재 방식)
 
-에이전트가 Step 8(최종 렌더링) 단계에서 생성하여 백엔드 렌더러로 전달할 최종 JSON 데이터에 아래와 같이 추출 및 계산된 RGB/HEX 컬러 메타데이터를 포함한다.
+추출된 팔레트는 01_strategy.md의 디자인 시스템 블록에 아래 형식으로 명시한다.
+사용자가 PPTX를 직접 제작할 때 이 값을 참고하여 슬라이드에 컬러를 적용한다.
 
-```json
-{
-  "design_system": {
-    "theme_type": "LIGHT",
-    "color_palette": {
-      "client_raw_color": "#10B981",
-      "dominant_bg": "#F8FAF8",
-      "sub_text": "#334155",
-      "accent_color": "#10B981",
-      "accent_rgb": [16, 185, 129]
-    },
-    "font_metadata": {
-      "family": "나눔스퀘어 Neo",
-      "size_top_message_pt": 30,
-      "size_subheader_pt": 18,
-      "size_body_pt": 14
-    }
-  },
-  "slides": [
-    {
-      "slide_number": 3,
-      "layout_type": "PROBLEM_VS_SOLUTION",
-      "title": "S사의 지속 가능한 성장을 위한 AX 솔루션",
-      "content": {
-        "left_block": {
-          "title": "현재의 한계 (As-Is)",
-          "bullets": ["단순 반복 행정 업무로 인한 병목 현상"]
-        },
-        "right_block": {
-          "title": "교육 후 미래 (To-Be)",
-          "bullets": ["업무 자동화 Bot 도입을 통한 시간 단축"]
-        }
-      }
-    }
-  ]
-}
+```
+## 디자인 시스템
+- 테마: LIGHT / DARK
+- Dominant (배경, 60%): #F8FAF8
+- Sub (본문 텍스트, 30%): #334155
+- Accent (브랜드 강조색, 10%): #10B981  ← 고객사 브랜드 컬러
+- 권장 폰트: 나눔스퀘어 Neo (본문 14pt / 소제목 18pt / 메인 메시지 30pt)
 ```
 
----
-
-## 5. 파이썬 백엔드(python-pptx) 렌더링 매핑 가이드라인
-
-백엔드 엔진은 전달받은 JSON의 `"color_palette"`를 감지하여 템플릿의 서식을 동적으로 덮어쓴다.
-
-1. **텍스트 하이라이트 제어 (`RGBColor` 연동):**
-   * 에이전트가 특정 단어에 볼드 및 하이라이트 플래그를 심어두었거나, 카드의 `"highlight": true` 속성을 준 경우 렌더러는 폰트 컬러를 설정할 때 `RGBColor(*accent_rgb)`를 대입하여 고객사 컬러를 강제 적용한다.
-
-2. **도형 테두리 및 구분선 제어:**
-   * 슬라이드 상의 주요 구분선(`connector`)이나 표(`table`)의 강조 행 테두리에 `accent_color`를 입힌다.
-
-3. **표지 및 간지 데코레이션:**
-   * 표지 슬라이드 우측 상단이나 좌측 하단의 브랜드 포인트 데코 도형의 채우기 색상(Fill Color)을 `accent_color`로 동적 변경한다.
+**사용자 PPTX 제작 시 적용 기준:**
+- Dominant: 슬라이드 배경색
+- Sub: 본문 텍스트, 카드 테두리, 표 헤더
+- Accent: 핵심 수치 강조, 타임라인 노드, 섹션 포인트 색상

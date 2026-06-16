@@ -1,0 +1,19 @@
+{
+  "client_name": "iM라이프",
+  "project_title": "DAX팀 AI 업무 자동화 교육 제안서",
+  "created_date": "2026-06-16",
+  "contact": {
+    "name": "이승규",
+    "title": "선임",
+    "team": "알파코 전략영업팀",
+    "email": "smvo0530@alpaco.co.kr",
+    "phone": "010-5055-6225"
+  },
+  "current_phase": 1,
+  "phase_status": {
+    "0": "completed",
+    "1": "in_progress",
+    "2": "pending",
+    "3": "pending"
+  }
+}

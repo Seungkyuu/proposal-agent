@@ -1,0 +1,19 @@
+{
+  "client_name": "현대 글로비스",
+  "project_title": "AX컬리지 — 전사 AI Transformation 4단계 교육 제안서",
+  "created_date": "2026-06-11",
+  "contact": {
+    "name": "오재영",
+    "title": "매니저",
+    "team": "교육문화팀",
+    "email": "jy0510@glovis.net",
+    "phone": "010-9374-4429"
+  },
+  "current_phase": 1,
+  "phase_status": {
+    "0": "completed",
+    "1": "in_progress",
+    "2": "pending",
+    "3": "pending"
+  }
+}

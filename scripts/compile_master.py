@@ -76,12 +76,12 @@ def main():
         'TITLE_SLIDE',
         'TABLE_OF_CONTENTS',
         'SECTION_DIVIDER',
+        'COMPANY_INTRO',
         'VENDOR_PROFILE',
         'PROBLEM_VS_SOLUTION',
         'FLOW_CHART',
-        'COMPARISON_BENCHMARK',
-        'CURRICULUM_TABLE',
         'N_COLUMN_CARDS',
+        'CURRICULUM_TABLE',
         'EVALUATION_METRIC',
         'CLOSING_SLIDE',
     ]
@@ -105,7 +105,7 @@ def main():
 
     for layout_type in LAYOUT_ORDER:
         if layout_type not in layouts:
-            print(f"  ⚠  {layout_type}: catalog에 없음 — 건너뜀")
+            print(f"  SKIP {layout_type}: catalog에 없음")
             continue
 
         rec  = layouts[layout_type]['recommended']
@@ -114,7 +114,7 @@ def main():
 
         fpath = os.path.join(SOURCE_DIR, fname)
         if not os.path.exists(fpath):
-            print(f"  ⚠  {layout_type}: 파일 없음 — {fname}")
+            print(f"  SKIP {layout_type}: 파일 없음 - {fname}")
             continue
 
         # 소스 파일 로드 (캐시)
@@ -123,7 +123,7 @@ def main():
         src_prs = prs_cache[fname]
 
         if sidx >= len(src_prs.slides):
-            print(f"  ⚠  {layout_type}: 슬라이드 인덱스 초과 ({sidx+1}/{len(src_prs.slides)})")
+            print(f"  SKIP {layout_type}: 슬라이드 인덱스 초과 ({sidx+1}/{len(src_prs.slides)})")
             continue
 
         # 복제
@@ -140,7 +140,7 @@ def main():
             "content_hints": _get_content_hints(layout_type),
         }
 
-        print(f"  ✓  [{master_slide_num:2d}] {layout_type:<25}  ←  {fname[:45]} S{rec['slide_idx']:02d}")
+        print(f"  OK [{master_slide_num:2d}] {layout_type:<25} <- {fname[:45]} S{rec['slide_idx']:02d}")
 
     # 저장
     master_prs.save(MASTER_PPTX)
@@ -148,12 +148,12 @@ def main():
     with open(INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(slide_index, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ 마스터 덱 저장: {MASTER_PPTX}")
-    print(f"✅ 슬라이드 인덱스 저장: {INDEX_PATH}")
+    print(f"\n[완료] 마스터 덱 저장: {MASTER_PPTX}")
+    print(f"[완료] 슬라이드 인덱스 저장: {INDEX_PATH}")
     print(f"   총 슬라이드: {master_slide_num}장")
-    print("\n📋 다음 단계:")
+    print("\n[다음 단계]")
     print("   1. PowerPoint로 alpaco_master.pptx 열어 레이아웃 시각 확인")
-    print("   2. 마음에 안 드는 슬라이드 → slide_catalog.json alternatives 중 교체 후 재실행")
+    print("   2. 마음에 안 드는 슬라이드 -> slide_catalog.json alternatives 중 교체 후 재실행")
     print("   3. 확인 완료 후 python renderer/pptx_builder.py 로 제안서 생성\n")
 
 

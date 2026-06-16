@@ -1,0 +1,15 @@
+{
+  "client_name": "동대문구시설관리공단",
+  "topic": "임직원 AI 활용 업무혁신 3일 부트캠프",
+  "contact": "",
+  "created_at": "2026-05-28",
+  "updated_at": "2026-05-28",
+  "current_phase": 3,
+  "phase_status": {
+    "0": "completed",
+    "1": "completed",
+    "2": "completed",
+    "3": "completed"
+  },
+  "notes": "3일 과정 / 20~30명 / 비전공자 중심 / 망분리 미확인"
+}

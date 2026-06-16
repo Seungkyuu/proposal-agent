@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "client_name": "한화에어로스페이스",
+    "course_name": "신입사원 입문과정 AI 역량 강화 과정 (9H)",
+    "generated_at": "2026-05-28",
+    "version": "1.0"
+  },
+  "design_system": {
+    "color_palette": {
+      "accent": "#F37321"
+    }
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "layout_type": "TITLE_SLIDE",
+      "content": {
+        "main_title": "한화에어로스페이스 신입사원 입문과정\nAI 역량 강화 과정 제안",
+        "sub_title": "AI 리터러시 · 프롬프트 엔지니어링 · 팀 실습 과제",
+        "date": "2025년 5월",
+        "company": "제안사: (주)알파코  |  교육 대상: 신입사원 240명  |  총 9시간"
+      }
+    },
+    {
+      "slide_number": 2,
+      "layout_type": "TABLE_OF_CONTENTS",
+      "content": {
+        "toc_items": [
+          "제안 배경 — AX 전환과 신입 AI 역량 Gap",
+          "알파코 소개 및 수행 실적",
+          "역량 강화 설계 철학 — SAM 애자일 교수설계",
+          "맞춤형 9H 커리큘럼",
+          "알파코 3대 독보적 강점 (USP)",
+          "KPI 평가 및 사후관리"
+        ]
+      }
+    },
+    {
+      "slide_number": 3,
+      "layout_type": "PROBLEM_VS_SOLUTION",
+      "content": {
+        "top_message": "한화에어로스페이스 AX 전환 선언\n신입 실무 AI 역량 조기 확보가 관건",
+        "left_title": "현재의 한계 (As-Is)",
+        "left_bullets": [
+          "AI 역량 강화 과정 최초 실시 — 운영 체계 없는 시작",
+          "전사 AX 선언 대비 신입 직접 활용 역량 사전 확보 미비",
+          "240명 혼합 직군 편차 관리 없이는 현장 이탈 위험"
+        ],
+        "right_title": "역량 전환 성과 (To-Be)",
+        "right_bullets": [
+          "240명 전원, ChatGPT OSS 현업 복귀 즉시 자력 운용",
+          "팀 AI 협업 과제 완수 → 신입 간 AX 문화 자발 확산",
+          "방산·항공 맥락 프롬프트 체득 → 직무 첫 주 즉시 적용"
+        ]
+      }
+    },
+    {
+      "slide_number": 4,
+      "layout_type": "VENDOR_PROFILE",
+      "content": {
+        "top_message": "대기업·방산 AI 역량 강화 검증 실적 기반\n최적 파트너십 제안",
+        "table_data": {
+          "headers": ["프로젝트명", "고객사", "규모", "만족도"],
+          "rows": [
+            ["생성형 AI 신입사원 입문 과정", "대기업 그룹사 A", "200명", "4.9/5.0"],
+            ["AI 리터러시·프롬프트 기초 과정", "방산·제조업 B", "150명", "4.8/5.0"],
+            ["AI 업무혁신 입문 과정", "공공기관 C", "180명", "4.7/5.0"],
+            ["생성형 AI 실무 전환 과정", "제조업 그룹사 D", "120명", "4.9/5.0"]
+          ]
+        }
+      }
+    },
+    {
+      "slide_number": 5,
+      "layout_type": "FLOW_CHART",
+      "content": {
+        "top_message": "반복 실행이 곧 역량이다\nSAM 애자일 교수설계 3단계 적용",
+        "steps": [
+          {
+            "header": "STEP 1 — 즉시 실행 프로토타입",
+            "body": "Day 1 시작 즉시 첫 프롬프트 입력 → 결과물 직접 체감\n완벽함보다 빠른 실행 → 도구 친숙도 조기 내재화\n가장 짧은 시간 내 AI 결과물 시제품 직접 생성"
+          },
+          {
+            "header": "STEP 2 — 강사 즉각 피드백 사이클",
+            "body": "강사·팀원 실시간 피드백 → 프롬프트 수정 → 재실행\n실패 결과(환각)도 학습 자원으로 즉시 전환\n반복 1회마다 결과물 품질 가시적 향상 체감"
+          },
+          {
+            "header": "STEP 3 — 팀 최종 산출물 완주",
+            "body": "반복 개선 누적 → 현업 수준 3분 발표 결과물 달성\n루브릭 채점으로 팀별 성취도 객관 가시화\n수료 후 동일 사이클 자력 반복 구조 확보"
+          }
+        ]
+      }
+    },
+    {
+      "slide_number": 6,
+      "layout_type": "N_COLUMN_CARDS",
+      "content": {
+        "top_message": "9시간 안에 완성하는\nAI 실무 전환 3단계 여정",
+        "cards": [
+          {
+            "header": "01. AI 리터러시",
+            "body": "LLM 작동 원리 + 생성형 AI 개요 직접 체득\nAI 환각 현상·기술 한계 직시 → 안전한 AI 활용 기반\n방산·항공우주 업무 변화 맥락 직접 분석"
+          },
+          {
+            "header": "02. 프롬프트 엔지니어링",
+            "body": "Role·Context·Format 3구조 원리 직접 체득\nChatGPT OSS로 개인 실습 즉시 수행\n프롬프트 반복 개선 사이클 경험"
+          },
+          {
+            "header": "03. 팀 실습 과제",
+            "body": "직무 시나리오(기획·생산·영업) 선택\nAI 결과물 생성 + 3분 발표 완주\n루브릭 기반 팀 성취 평가"
+          }
+        ]
+      }
+    },
+    {
+      "slide_number": 7,
+      "layout_type": "CURRICULUM_TABLE",
+      "content": {
+        "top_message": "Day 1 커리큘럼 — AI 리터러시부터 팀 과제 시작까지",
+        "course_goal": "AI 개념 정립과 프롬프트 기초 체득으로 팀 과제 자력 착수 역량 확보",
+        "table_data": {
+          "headers": ["차시", "세부 주제", "핵심 내용", "실습 도구", "최종 산출물"],
+          "rows": [
+            ["1차시 (1.5H)", "AI 리터러시", "LLM·생성형 AI 원리\nAI 환각 현상 직시\n책임감 있는 AI 활용", "강의 슬라이드", "AI 기술 한계 체크리스트"],
+            ["2차시 (1.5H)", "AI 시대 일하는 방식", "AX 전환 맥락 체감\n방산 AI 활용 사례\nAI 업무 자동화 시연", "강의+토론", "내 업무 AI 적용 아이디어"],
+            ["3차시 (2H)", "프롬프트 엔지니어링 기초", "R·C·F 구조 원리\n개인 프롬프트 작성\n반복 개선 직접 체험", "ChatGPT OSS", "프롬프트 연습 5종"],
+            ["4차시 (1H)", "팀 과제 킥오프", "루브릭 사전 공개\n팀 구성·역할 배분\n첫 프롬프트 직접 설계", "ChatGPT·GEMMA4", "팀 프롬프트 초안"]
+          ]
+        }
+      }
+    },
+    {
+      "slide_number": 8,
+      "layout_type": "CURRICULUM_TABLE",
+      "content": {
+        "top_message": "Day 2 커리큘럼 — 팀 과제 완성과 발표·평가",
+        "course_goal": "프롬프트 반복 개선으로 팀 결과물 완성, 루브릭 기반 발표·평가 전원 완주",
+        "table_data": {
+          "headers": ["차시", "세부 주제", "핵심 내용", "실습 도구", "최종 산출물"],
+          "rows": [
+            ["5차시 (1.5H)", "심화 실습 + 과제 완성", "프롬프트 반복 수정\n팀 결과물 완성\n3분 발표 자료 준비", "ChatGPT·GEMMA4", "팀 AI 결과물 (택1)"],
+            ["6차시 (1.5H)", "팀 발표 + 루브릭 평가", "팀별 3분 발표\n루브릭 채점 완료\n강사 전체 피드백", "—", "평가 결과표·수료 확인"]
+          ]
+        }
+      }
+    },
+    {
+      "slide_number": 9,
+      "layout_type": "N_COLUMN_CARDS",
+      "content": {
+        "top_message": "타사와 차별화되는\n알파코 3대 독보적 강점 (USP)",
+        "cards": [
+          {
+            "header": "01. 방산 맞춤형 실습",
+            "body": "기획·생산·영업 3종 직무 시나리오 맞춤 구성\n신입 직무 맥락 프롬프트 실습 → 현업 즉시 재현 가능\n범용 과정과 차별화된 한화에어로스페이스 밀착 콘텐츠"
+          },
+          {
+            "header": "02. 대규모 운영 안정성",
+            "body": "150명 오프라인 분반 퍼실리테이터 배치 계획 포함\n이탈·지체 없이 전원 과제 완성 보장\n대규모 집합 과정 전담 운영 노하우 실적 보유"
+          },
+          {
+            "header": "03. 루브릭 선공개 평가",
+            "body": "Day 1 시작 전 평가 기준표 전원 배포\n평가 불확실성 제거 → 신입사원 몰입도 최대화\n미완성 팀 현장 즉시 보충 지원 제공"
+          }
+        ]
+      }
+    },
+    {
+      "slide_number": 10,
+      "layout_type": "EVALUATION_METRIC",
+      "content": {
+        "top_message": "커크패트릭 4단계 평가로\n성과 ROI 가시화 및 현업 이전 보장",
+        "cards": [
+          {
+            "header": "Level 1 — 반응 평가",
+            "body": "과정 종료 직후 5점 척도 만족도 조사\n목표: 4.5/5.0 이상\n모듈별 세부 + 강사 진행 방식 항목"
+          },
+          {
+            "header": "Level 2 — 산출물 성취 평가",
+            "body": "팀 실습 결과물 루브릭 채점 (100점)\n프롬프트 논리성·완성도·현업 적용·팀 협업\n전 팀 완주 보장 체계 포함"
+          },
+          {
+            "header": "Level 3 — 행동 변화 추적",
+            "body": "4주 후 현업 AI 활용 빈도 자기보고\nChatGPT OSS·GEMMA4 활용 사례 제출\n현장 적용 전이 여부 정량 추적"
+          },
+          {
+            "header": "Level 4 — 성과 및 ROI",
+            "body": "6개월 후 업무 시간 절감률 추적 리포트\nAI 활용 정착률 부서별 측정\n선택 제공 항목 (별도 협의)"
+          }
+        ],
+        "footnote": "※ Level 3~4는 본 제안 범위 외 별도 협의 사항"
+      }
+    },
+    {
+      "slide_number": 11,
+      "layout_type": "CLOSING_SLIDE",
+      "content": {
+        "main_title": "한화에어로스페이스 신입사원의\nAX 전환 여정, 알파코가 함께합니다",
+        "contact_info": "제안사: (주)알파코\n담당자: 전략영업팀\nE-mail: proposal@alpaco.ai\nTel: 02-2163-5750"
+      }
+    }
+  ]
+}

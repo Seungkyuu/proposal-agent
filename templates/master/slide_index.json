@@ -1,0 +1,178 @@
+{
+  "master_file": "alpaco_master.pptx",
+  "version": "1.0",
+  "generated_at": "2026-05-22",
+  "layouts": {
+    "TITLE_SLIDE": {
+      "slide_idx": 1,
+      "description": "표지 슬라이드 — 교육과정명·제안사·날짜",
+      "source_file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
+      "source_slide_idx": 1,
+      "flags": "IMG",
+      "content_hints": {
+        "fields": [
+          "main_title",
+          "sub_title",
+          "date",
+          "company"
+        ],
+        "strategy": "text_replace_by_order"
+      }
+    },
+    "TABLE_OF_CONTENTS": {
+      "slide_idx": 2,
+      "description": "목차 슬라이드 — 제안서 구성 안내",
+      "source_file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
+      "source_slide_idx": 2,
+      "flags": "MULTI-SHAPE(27)",
+      "content_hints": {
+        "fields": [
+          "toc_items"
+        ],
+        "strategy": "bullet_replace"
+      }
+    },
+    "SECTION_DIVIDER": {
+      "slide_idx": 3,
+      "description": "챕터 간지 — 섹션 전환 구분선",
+      "source_file": "(알파코) KB국민은행 메타인지 AI 해커톤 제안.pptx",
+      "source_slide_idx": 3,
+      "flags": "IMG, MULTI-SHAPE(14)",
+      "content_hints": {
+        "fields": [
+          "section_title",
+          "section_subtitle"
+        ],
+        "strategy": "text_replace_by_order"
+      }
+    },
+    "COMPANY_INTRO": {
+      "slide_idx": 4,
+      "description": "알파코 회사 소개 슬라이드 — 소스 덱에서 그대로 복제 (텍스트 교체 없음)",
+      "source_file": "(알파코)AIDP_KB국민은행_디지털금융실무 전문가과정 최종제안서.pptx",
+      "source_slide_idx": 14,
+      "flags": "IMG, MULTI-SHAPE(28)",
+      "content_hints": {
+        "strategy": "text_replace_by_order"
+      }
+    },
+    "VENDOR_PROFILE": {
+      "slide_idx": 5,
+      "description": "제안사 소개 + 수행 실적 테이블 (강사 정보 제외)",
+      "source_file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
+      "source_slide_idx": 20,
+      "flags": "TABLE, MULTI-SHAPE(24)",
+      "content_hints": {
+        "fields": [
+          "top_message",
+          "table_data"
+        ],
+        "strategy": "text_and_table",
+        "table_cols": [
+          "프로젝트명",
+          "고객사",
+          "규모",
+          "만족도"
+        ]
+      }
+    },
+    "PROBLEM_VS_SOLUTION": {
+      "slide_idx": 6,
+      "description": "As-Is / To-Be 좌우 비교 슬라이드",
+      "source_file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
+      "source_slide_idx": 4,
+      "flags": "IMG, MULTI-SHAPE(23)",
+      "content_hints": {
+        "fields": [
+          "top_message",
+          "left_title",
+          "left_bullets",
+          "right_title",
+          "right_bullets"
+        ],
+        "strategy": "two_column_replace"
+      }
+    },
+    "FLOW_CHART": {
+      "slide_idx": 7,
+      "description": "단계별 프로세스 흐름 카드 (STEP 1→2→3)",
+      "source_file": "(알파코) KB국민은행 메타인지 AI 해커톤 제안.pptx",
+      "source_slide_idx": 10,
+      "flags": "MULTI-SHAPE(12)",
+      "content_hints": {
+        "fields": [
+          "top_message",
+          "steps"
+        ],
+        "strategy": "card_replace",
+        "card_count": 3
+      }
+    },
+    "N_COLUMN_CARDS": {
+      "slide_idx": 8,
+      "description": "2~3단 카드 나열 (특장점·강점·서비스 옵션)",
+      "source_file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
+      "source_slide_idx": 7,
+      "flags": "MULTI-SHAPE(50)",
+      "content_hints": {
+        "fields": [
+          "top_message",
+          "cards"
+        ],
+        "strategy": "card_replace",
+        "card_count": 3
+      }
+    },
+    "CURRICULUM_TABLE": {
+      "slide_idx": 9,
+      "description": "5열 커리큘럼 표 (차시/주제/내용/도구/산출물)",
+      "source_file": "알파코_신한은행_퓨처아카데미 Level-up Data.AI 융합과정 .pptx",
+      "source_slide_idx": 3,
+      "flags": "TABLE, MULTI-SHAPE(4)",
+      "content_hints": {
+        "fields": [
+          "top_message",
+          "table_data"
+        ],
+        "strategy": "text_and_table",
+        "table_cols": [
+          "차시",
+          "세부 주제",
+          "핵심 학습 내용",
+          "실습 도구 및 액티비티",
+          "최종 산출물"
+        ],
+        "supports_section_rows": true
+      }
+    },
+    "EVALUATION_METRIC": {
+      "slide_idx": 10,
+      "description": "KPI / 평가 지표 카드 (커크패트릭 등)",
+      "source_file": "(알파코) 신한금융그룹 AX 혁신 리더 AI Agent 교육 제안_최종취합본 1.pptx",
+      "source_slide_idx": 68,
+      "flags": "TABLE, MULTI-SHAPE(4)",
+      "content_hints": {
+        "fields": [
+          "top_message",
+          "cards"
+        ],
+        "strategy": "card_replace",
+        "card_count": 4
+      }
+    },
+    "CLOSING_SLIDE": {
+      "slide_idx": 11,
+      "description": "마무리·감사·연락처 슬라이드",
+      "source_file": "알파코_S-Oil_2025년 독서통신 교육 서비스 수행 용역 제안(2502) (1).pptx",
+      "source_slide_idx": 28,
+      "flags": "IMG, MULTI-SHAPE(4)",
+      "content_hints": {
+        "fields": [
+          "main_title",
+          "contact_info"
+        ],
+        "strategy": "text_replace_by_order"
+      }
+    }
+  }
+}

@@ -1,75 +1,88 @@
-# B2B Proposal Agent: Pipeline Flow & Validation Architecture (V6)
+# Agent Skill 11: Pipeline Flow & Validation Architecture (V8 — 4-Phase)
 
-본 문서는 B2B 제안서 기획 챗봇 에이전트의 4대 배치 페이즈(Batch Phase) 구동 시 적용되는 마스터 스킬 작동 흐름 및 페이즈 경계선에서의 자가 검증 리포팅(Integrity Pass Report) 구조를 정의한다.
+본 문서는 B2B 제안서 기획 에이전트의 4단계 파이프라인 구동 흐름과 각 Phase 경계에서의 자가 검증 및 사용자 승인 게이트 구조를 정의한다.
 
 ---
 
-## 1. 페이즈별 (Phase 0~4) 실시간 스킬 바인딩 & 검증 매핑 (Flow Map)
-
-에이전트는 독립된 스킬들을 무대 뒤에서 동시에 구동하여 연산 지연을 단축하며, 페이즈 종료와 동시에 엄격한 정합성 보고서(Audit)를 발행한다.
+## 1. 전체 파이프라인 흐름
 
 ```
-[인풋 수신: 기업명 & 거친 요구사항]
+[입력: 고객사명 & 교육 주제]
 │
-├── [PHASE 0] 제안사 자산 인벤토리 체크 ★ Phase 1 이전 필수 실행
-│     ├── 01_proposal_strategy_discovery_rules.md §0 ──► Pre-Flight Q1: 기존 PPTX 양식 파일 여부 확인
-│     ├── 01_proposal_strategy_discovery_rules.md §0 ──► Pre-Flight Q2: 브랜드 컬러 가이드 여부 확인
-│     └── 01_proposal_strategy_discovery_rules.md §0 ──► Pre-Flight Q3: 레퍼런스 덱 여부 확인
+├── [PHASE 0] 요구사항 정의서 작성 ★ 최우선 실행
+│     └── 00_requirements_definition_rules.md 전체 실행
+│           - 5개 블록 질문 수집
+│           - 요구사항 정의서 작성 및 출력
+│           - 내부 검증 실행
 │     │
-│     └── [Phase 0 Integrity Pass Audit] — Skill 09 Section 1-1 기준
-│           - [CV] Q1 PPTX 양식 확인 질문 실행 여부 (미실행 시 FAIL → 파이프라인 중단)
-│           - [CV] Q2 브랜드 컬러 가이드 확인 질문 실행 여부
-│           - [CV] Q3 레퍼런스 덱 확인 질문 실행 여부
-│           - [CV] 파일 업로드 수신 시 → Skill 03 역공학 모드 활성화 및 clone_source_layout_idx 채번 여부
+│     └── ★ GATE 0: 사용자 승인
+│           승인 전 Phase 1 진입 절대 금지
 │
-│     ※ Phase 0 Audit 전원 [PASS] 확인 후에만 Phase 1 진입 허용
-│
-├── [PHASE 1] Discovery & Strategy Alignment (1차 검토 마일스톤)
-│     ├── 01_proposal_strategy_discovery_rules.md ──► 주제 연동형 고객사 자동 사전 리서치 & 교육제안 기획서 수립
+├── [PHASE 1] 기획안 작성
+│     ├── 01_proposal_strategy_discovery_rules.md ──► 고객사 리서치 & 기획서 수립
 │     ├── 02_client_color_system_spec.md ────────────► 브랜드 컬러 60-30-10 추출
-│     └── 03_design_deconstruction_reconstruction_rules.md ──► 회사 소개서 실적 매칭 (강사 배제)
+│     ├── 03_design_deconstruction_reconstruction_rules.md ──► 레퍼런스 덱 tone/DNA 분석
+│     ├── 04_instructional_design_engine_rules.md ──► 교수설계 모델 선택
+│     ├── 05_curriculum_generation_rules.md ────────► 커리큘럼 설계 + 망분리 도구 선택
+│     ├── 06_curriculum_validation_benchmarking_rules.md ──► AS 내부 검증 (슬라이드 출력 금지)
+│     └── 07_b2b_proposal_copywriting_rules.md ─────► 카피라이팅 튜닝
 │     │
-│     └── [Phase 1 Integrity Pass Audit] — Skill 09 Section 3 기준
-│           - [CV] 고객사 웹 검색 완료 여부 (Fallback 적용 시 사유 명시)
-│           - [CV] 강사 배제 정규식 스캔 (Skill 01 Section 7 기준)
+│     └── [Phase 1 Integrity Pass — 3회 반복]
+│           - [CV] 웹 리서치 완료 또는 Fallback 적용
+│           - [CV] 강사 관련 텍스트 0건
+│           - [CV] 금지 어휘 0건 (이해·파악·학습·교육·습득)
 │           - [CV] 브랜드 HEX 채도/명도 필터 통과
-│           - [CV] color_palette 3필드 완전 정의
+│           - [CV] 브랜드 컬러 3필드 완전 정의
 │           - [CV] 피치 스타일 ↔ 대상 직급 정합성
-│           - [RV: PENDING-RENDER] 60-30-10 실제 슬라이드 적용
-│
-├── [PHASE 2] Curriculum & Instructional Design (2차 검토 마일스톤)
-│     ├── 04_instructional_design_engine_rules.md ──► 교수설계 최적 모델 매핑
-│     ├── 05_curriculum_generation_rules.md ────────► 직무/직급별 시간표 수립
-│     ├── 06_curriculum_validation_benchmarking_rules.md ──► 글로벌 syllabus 벤치마크 (AS ≥ 85%)
-│     └── 07_b2b_proposal_copywriting_rules.md ─────► 행동형 종결 카피라이팅 튜닝
+│           - [CV] 커리큘럼 5열 구성 일치
+│           - [CV] 벤치마킹 AS ≥ 85% (내부 검증 전용)
+│           - [CV] 망분리 환경 → 실습 도구 일치 (Skill 05 §4-1)
 │     │
-│     └── [Phase 2 Integrity Pass Audit] — Skill 09 Section 3 기준
-│           - [CV] 교수설계 M_k 재연산 일치
-│           - [CV] 벤치마킹 AS ≥ 85% (검색 실패 시 Degraded 75%)
-│           - [CV] 금지 어휘 0건 정규식 스캔
-│           - [CV] CURRICULUM_TABLE 5열 헤더 정확히 일치
+│     └── ★ GATE 1: 사용자 기획안 검토·승인
 │
-├── [PHASE 3] USP & KPI Evaluation (3차 최종 검토 마일스톤)
-│     ├── 08_proposal_structure_and_operations_spec.md ──► 특장점 USP 3대 카드 도출
-│     └── 04_instructional_design_engine_rules.md ──► 커크패트릭 4단계 사후 케어 연동
+├── [PHASE 2] 슬라이드 구조 설계
+│     └── 08_proposal_structure_and_operations_spec.md ──► 슬라이드 수·순서·layout_type 확정
 │     │
-│     └── [Phase 3 Integrity Pass Audit] — Skill 09 Section 3 기준
-│           - [CV] JSON 스키마 required 필드 완전성
-│           - [CV] layout_type enum 유효성 (9개 허용값)
-│           - [CV] top_message 세만틱 줄바꿈 삽입 (25자 초과 시 \n 필수)
-│           - [RV: PENDING-RENDER] PPTX 네이티브 표 렌더링
-│           - [RV: PENDING-RENDER] 폰트 위계 30/18/14pt 적용
+│     └── [Phase 2 Integrity Pass]
+│           - [CV] 전체 슬라이드 layout_type 명시
+│           - [CV] 슬라이드 수 요구사항 ±2 이내
+│           - [CV] 섹션 구분 슬라이드 포함 여부 요구사항 일치
+│           - [CV] COMPANY_INTRO 슬라이드 포함
+│           - [CV] CURRICULUM_TABLE 슬라이드 포함
+│     │
+│     └── ★ GATE 2: 사용자 구조 설계안 검토·승인
 │
-└── [PHASE 4] Auto-Rendering Pipeline (자동 PPTX 생성)
-      └── 12_data_contract_schema_spec.md ➔ renderer/pptx_builder.py ➔ 실물 제안서 생성
+└── [PHASE 3] 슬라이드별 콘텐츠 작성
+      └── 15_content_design_output_spec.md ──► 슬라이드별 복붙용 텍스트 생성
+      │
+      └── [Phase 3 Integrity Pass]
+            - [CV] Phase 2 슬라이드 수·순서 일치
+            - [CV] 슬라이드별 텍스트 누락 없음
+            - [CV] 강사 관련 텍스트 최종 스캔 0건
+            - [CV] 금지 어휘 최종 스캔 0건
+            - [CV] 타 고객사명 미포함 (수행 실적 제외)
+            - [CV] top_message 2줄 구성 (\n 존재)
+            - [CV] KPI 슬라이드 내용이 납품 범위 이내
+      │
+      └── ★ 03_content.md 저장 → 사용자 전달
 ```
 
 ---
 
-## 2. 전 페이즈 정합성 보고서 자가 진단 및 예외 조치 프로토콜 (Exception Handling)
+## 2. FAIL 처리 원칙
 
-* **진단 결과 `[FAIL]` 감지 시:**
-  에이전트는 해당 페이즈 결과를 기획자에게 절대 출력하지 않으며, 감지된 위반 내역(예: "레퍼런스에 강사 개인 이력이 검출됨")을 분석하여 스스로 기획 내용을 재수정(Self-Correction Loop)한 후 정합성 보고서가 전원 `[PASS]`될 때까지 루프를 가동한다.
+- `[CV: FAIL]` 감지 시: 자가 수정 후 해당 항목 재검증. 3회 재시도 후에도 FAIL이면 사용자에게 수동 확인 요청.
+- 사용자가 GATE에서 수정 요청 시: Skill 10 Dependency Map 발동 → 연관 단계 전체 재검증.
+- 사용자가 'back' 입력 시: 이전 Phase로 복귀하여 해당 Phase부터 재실행.
 
-* **사용자 기획 수정 피드백 수신 시:**
-  피드백이 접수되면 에이전트는 `10_agent_coherence_propagation_rules.md`를 발동시켜 해당 페이즈는 물론 연동된 모든 이전/이후 단계의 정합성 검사를 전방위적으로 재수행하고, 갱신된 검증 통과 보고서를 기획자에게 다시 보고한다.
+---
+
+## 3. 파이프라인 역할 분담
+
+| 담당 | 산출물 |
+|---|---|
+| Claude (에이전트) | 00_requirements.md, 01_strategy.md, 02_structure.md, 03_content.md |
+| 사용자 | PPTX 디자인·제작 (03_content.md 텍스트를 복붙하여 직접 제작) |
+
+> Phase 4(python-pptx 자동 렌더러)는 완성도 문제로 파이프라인에서 제거되었다.
+> Skill 12, 13, 14는 폐기(DEPRECATED) 상태이며 참조하지 않는다.
