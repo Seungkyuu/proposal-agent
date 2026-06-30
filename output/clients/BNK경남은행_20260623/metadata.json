@@ -1,0 +1,24 @@
+{
+  "client": "BNK경남은행",
+  "folder": "BNK경남은행_20260623",
+  "created": "2026-06-23",
+  "topic": "경영진 AI 활용 시리즈 5회차",
+  "target": "경영진/임원급",
+  "sessions": 5,
+  "hours_per_session": 1.5,
+  "total_hours": 7.5,
+  "internet": "자유롭게 사용 가능",
+  "tools_focus": ["MS Copilot", "Claude"],
+  "proposal_type": "단독제안",
+  "deadline": "2026-06-23",
+  "reference": "BNK부산은행 경영진 AI 리더십 과정 (실제 수행)",
+  "phase_status": {
+    "phase_0": "completed",
+    "phase_1": "completed",
+    "phase_2": "completed",
+    "phase_3": "n/a"
+  },
+  "deliverables": {
+    "slides": ["slide_02_overview", "slide_03_curriculum"]
+  }
+}

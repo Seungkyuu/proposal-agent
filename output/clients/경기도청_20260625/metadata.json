@@ -1,0 +1,35 @@
+{
+  "client_name": "경기도청",
+  "topic": "AI Agent 제작 실무 과정 (AX 교육, SK AX 공동 제안)",
+  "contact": "",
+  "created_at": "2026-06-25",
+  "updated_at": "2026-06-25",
+  "current_phase": 2,
+  "phase_status": {
+    "0": "completed",
+    "1": "completed",
+    "2": "completed (P4·5·7·9·10·11·12 채움)"
+  },
+  "co_proposer": "SK AX",
+  "delivery_format": "오프라인(알파코) + 온라인(SK AX) 혼합",
+  "headcount": "25명 단위",
+  "total_hours": "24시간 — 6회차 × 4H, 주 1회 분산",
+  "ai_level": "초급~중급 (가정, Phase 1 확인)",
+  "internet_env": "자유 사용 가능",
+  "pc_env": "미정 (알파코 교육장 PC / 개인 노트북 가정)",
+  "tool_system": {
+    "note": "인터넷 자유 → 클라우드 SaaS 허용. Phase 1에서 최종 확정.",
+    "candidate_tools": ["바이브코딩 도구", "AI Agent 빌더", "정부24 연동 시나리오"],
+    "api_tools_allowed": false
+  },
+  "reference_clients_internal": {
+    "ppt_structure_base": "한화 에어로스페이스",
+    "curriculum_base": ["신한은행", "장금상선"],
+    "note": "내부 설계 참조용. 제안서 슬라이드에는 익명/미언급 처리 (실적 슬라이드 제외)."
+  },
+  "constraints": {
+    "skax_certification": "인증제 직접 연계 반영 금지 — 향후 연계 연결고리만 남김",
+    "no_instructor_profile": true
+  },
+  "notes": "경기도청 임직원 대상. 실제 업무 기반 AI Agent 제작(보고서 자동화, 규정집 업데이트, 정부24 활용). 바이브코딩~맞춤형 Agent 제작까지."
+}
